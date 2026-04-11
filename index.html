@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Maison | Luxury Specialty Cake & Bakery</title>
+    <!-- Google Fonts: Playfair Display & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body data-theme="light">
+
+    <!-- Header Section -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.png" alt="La Maison Logo"></a>
+            </div>
+
+            <nav class="nav-center">
+                <div class="nav-item active">
+                    <span>Home <i class="bi bi-chevron-down"></i></span>
+                    <ul class="dropdown">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item"><a href="about.html">About</a></div>
+                <div class="nav-item"><a href="services.html">Services</a></div>
+                <div class="nav-item"><a href="contact.html">Contact</a></div>
+                <div class="nav-item">
+                    <span>Dashboard <i class="bi bi-chevron-down"></i></span>
+                    <ul class="dropdown">
+                        <li><a href="dashboard.html">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="nav-right">
+                <button class="icon-btn" id="dir-toggle" title="Toggle LTR/RTL"><i class="bi bi-globe"></i></button>
+                <button class="icon-btn" id="theme-toggle" title="Toggle Light/Dark Theme"><i
+                        class="bi bi-moon-stars-fill"></i></button>
+                <a href="login.html" class="login-btn">LOGIN</a>
+                <div class="hamburger"><i class="bi bi-list"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-wrapper">
+                <div class="hero-content reveal">
+                    <h1 class="premium-font h1-heading">A Premium Taste Of <span>True Luxury</span> Cakes</h1>
+                    <p>Elevate your celebrations with our masterfully crafted specialty cakes. Each creation is a
+                        masterpiece designed to delight your senses and create unforgettable memories.</p>
+                    <div class="hero-btns">
+                        <a href="#collection" class="primary-btn">Explore Collection</a>
+                        <a href="#" class="secondary-btn">Book Custom Cake</a>
+                    </div>
+                </div>
+                <div class="hero-image reveal" style="transition-delay: 0.2s;">
+                    <img src="assets/images/hero-cake.png" alt="Luxury Cake Hero">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Features/USP -->
+        <section id="features" class="reveal">
+            <div class="container section-title">
+                <h2>Why Choose La Maison?</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container grid-main">
+                <div class="feature-card">
+                    <i class="bi bi-award"></i>
+                    <h3 class="premium-font">Master Chefs</h3>
+                    <p>Led by world-renowned pastry artists with decades of experience in luxury baking.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="bi bi-gem"></i>
+                    <h3 class="premium-font">Premium Ingredients</h3>
+                    <p>We source only the finest organic ingredients and rare chocolates from around the world.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="bi bi-truck"></i>
+                    <h3 class="premium-font">Express Delivery</h3>
+                    <p>Temperature-controlled logistics to ensure your cake arrives in pristine, fresh condition.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Signature Collection -->
+        <section id="collection" class="reveal">
+            <div class="container section-title">
+                <h2>The Signature Collection</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container cake-gallery">
+                <div class="cake-item">
+                    <img src="assets/images/cake1.png" alt="Chocolate Ganache">
+                    <div class="cake-overlay">
+                        <h4>Royal Ganache</h4>
+                        <p>$180.00</p>
+                    </div>
+                </div>
+                <div class="cake-item">
+                    <img src="assets/images/cake2.png" alt="Floral Pastel">
+                    <div class="cake-overlay">
+                        <h4>Pastel Bloom</h4>
+                        <p>$210.00</p>
+                    </div>
+                </div>
+                <div class="cake-item">
+                    <img src="assets/images/cake3.png" alt="Red Velvet">
+                    <div class="cake-overlay">
+                        <h4>Velvet Crimson</h4>
+                        <p>$195.00</p>
+                    </div>
+                </div>
+                <!-- Adding a fourth placeholder for symmetry -->
+                <div class="cake-item">
+                    <img src="assets/images/hero-cake.png" alt="Classic Gold">
+                    <div class="cake-overlay">
+                        <h4>Classic Gold</h4>
+                        <p>$250.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Chef's Special (Single Item Highlight) -->
+        <section id="chef-special" class="reveal" style="background-color: var(--surface);">
+            <div class="container grid-2col chef-special-grid" style="gap: 6rem;">
+                <div class="image-reveal">
+                    <div class="chef-special-img-container"
+                        style="position: relative; border-radius: 40px; overflow: hidden; box-shadow: 30px 30px 0 var(--primary); margin-bottom: 30px;">
+                        <img src="assets/images/cake1.png" alt="Chef Special"
+                            style="width:100%; display: block; transition: 0.5 transform;">
+                    </div>
+                </div>
+                <div class="content-reveal">
+                    <div
+                        style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(212, 175, 55, 0.1); color: var(--primary); border-radius: 50px; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 1.5rem;">
+                        CHEF'S SIGNATURE 2024</div>
+                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin-bottom: 2rem;">The
+                        Midnight <br>Gold Truffle</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 2.5rem;">
+                        Experience the pinnacle of patisserie. A daring combination of 70% rare dark Belgian chocolate
+                        ganache, infused with organic Madagascar vanilla, and meticulously layered with hand-pressed 24k
+                        edible gold leaf. A masterpiece reserved for life's most golden moments.</p>
+                    <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                        <a href="#" class="primary-btn">Pre-Order Now</a>
+                        <div style="display: flex; flex-direction: column;">
+                            <span style="font-weight: 700; font-size: 1.5rem; color: var(--primary);">$295.00</span>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Limited Availability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Testimonials -->
+        <section id="testimonials" class="reveal">
+            <div class="container section-title">
+                <span
+                    style="color: var(--primary); font-weight: 600; letter-spacing: 3px; display: block; margin-bottom: 1rem;">TESTIMONIALS</span>
+                <h2>Our Client Stories</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container grid-2col testimonial-grid">
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+                    <i class="bi bi-quote"
+                        style="position: absolute; top: 30px; right: 30px; font-size: 3rem; color: rgba(212, 175, 55, 0.1);"></i>
+                    <div class="stars-column"
+                        style="display: flex; flex-direction: column; gap: 0.5rem; color: var(--primary); font-size: 1.8rem;">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="content">
+                        <p
+                            style="font-size: 1.2rem; line-height: 1.7; font-family: var(--font-heading); font-style: italic; margin-bottom: 2rem; color: var(--text);">
+                            "The wedding cake was a masterpiece. From the delicate gold leaves to the rich velvet
+                            texture, every detail was perfect. Our guests were truly enchanted by the artistry and
+                            flavor."</p>
+                        <div style="border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 1.5rem;">
+                            <h4 class="premium-font" style="margin-bottom: 0.2rem; color: var(--text);">Sophia & James
+                            </h4>
+                            <small style="color: var(--text-muted); text-transform: uppercase;">Wedding Anniversary •
+                                June 2023</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="testimonial-card">
+                    <i class="bi bi-quote"
+                        style="position: absolute; top: 30px; right: 30px; font-size: 3rem; color: rgba(212, 175, 55, 0.1);"></i>
+                    <div class="stars-column"
+                        style="display: flex; flex-direction: column; gap: 0.5rem; color: var(--primary); font-size: 1.8rem;">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="content">
+                        <p
+                            style="font-size: 1.2rem; line-height: 1.7; font-family: var(--font-heading); font-style: italic; margin-bottom: 2rem; color: var(--text);">
+                            "La Maison is simply incomparable. They transformed our vision into a reality for my
+                            daughter's birthday. It wasn't just a cake; it was a memory that will last a lifetime."</p>
+                        <div style="border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 1.5rem;">
+                            <h4 class="premium-font" style="margin-bottom: 0.2rem; color: var(--text);">Mrs. Henderson
+                            </h4>
+                            <small style="color: var(--text-muted); text-transform: uppercase;">Custom Celebration • Nov
+                                2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Our Quality / Ingredients -->
+        <section id="quality" class="reveal dark-highlight-section">
+            <div class="container grid-main" style="text-align: center;">
+                <div style="text-align: center;">
+                    <h4 style="font-size: 4rem; color: var(--primary);">100%</h4>
+                    <p>Organic Sourced</p>
+                </div>
+                <div style="text-align: center;">
+                    <h4 style="font-size: 4rem; color: var(--primary);">24H</h4>
+                    <p>Fresh Baking</p>
+                </div>
+                <div style="text-align: center;">
+                    <h4 style="font-size: 4rem; color: var(--primary);">0%</h4>
+                    <p>Artificial Flavor</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Our Process Step by Step -->
+        <section id="process" class="reveal">
+            <div class="container section-title">
+                <span
+                    style="color: var(--primary); font-weight: 600; letter-spacing: 3px; display: block; margin-bottom: 1rem;">CRAFTMANSHIP</span>
+                <h2>The Art of Creation</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container grid-main">
+                <div class="feature-card" style="position: relative; overflow: visible;">
+                    <div
+                        style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);">
+                        1</div>
+                    <h3 class="premium-font" style="margin-top: 1rem;">Consultation</h3>
+                    <p>A private session to translate your vision into a flavor profile and aesthetic masterpiece
+                        tailored for your specific event.</p>
+                </div>
+                <div class="feature-card" style="position: relative; overflow: visible;">
+                    <div
+                        style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);">
+                        2</div>
+                    <h3 class="premium-font" style="margin-top: 1rem;">Bespoke Baking</h3>
+                    <p>Utilizing centuries-old French techniques and modern precision to create textures that are light
+                        as air yet rich in depth.</p>
+                </div>
+                <div class="feature-card" style="position: relative; overflow: visible;">
+                    <div
+                        style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);">
+                        3</div>
+                    <h3 class="premium-font" style="margin-top: 1rem;">Hand-Painting</h3>
+                    <p>Each cake is a canvas. Our artists spend up to 48 hours hand-decorating each layer with refined
+                        sugar-work and botanical art.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Custom Occasions -->
+        <section id="occasions" class="reveal" style="padding: 0;">
+            <div class="parallax-banner"
+                style="background-image: url('assets/images/bakery-interior.png'); height: 600px;">
+                <div class="parallax-content">
+                    <h2 class="premium-font" style="font-size: 4rem;">Made for Your Moments</h2>
+                    <p style="font-size: 1.5rem; max-width: 800px; margin: 0 auto;">Weddings, Birthdays, Anniversaries,
+                        or just treats for the soul.</p>
+                    <a href="#" class="primary-btn" style="margin-top: 2rem; display: inline-block;">Get A Custom
+                        Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Awards & Honors -->
+        <section id="awards" class="reveal"
+            style="background: rgba(212, 175, 55, 0.03); border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1);">
+            <div class="container">
+                <div
+                    style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 3rem;">
+                    <div style="text-align:center; flex: 1;">
+                        <i class="bi bi-award"
+                            style="font-size: 3rem; color: var(--primary); display: block; margin-bottom: 1rem;"></i>
+                        <h4 class="premium-font" style="letter-spacing: 1px;">GOLDEN WHISK</h4>
+                        <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted);">Best Luxury
+                            Bakery 2023</p>
+                    </div>
+                    <div style="text-align:center; flex: 1;">
+                        <i class="bi bi-patch-check"
+                            style="font-size: 3rem; color: var(--primary); display: block; margin-bottom: 1rem;"></i>
+                        <h4 class="premium-font" style="letter-spacing: 1px;">PREMIUM RATED</h4>
+                        <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted);">5-Star
+                            Excellence</p>
+                    </div>
+                    <div style="text-align:center; flex: 1;">
+                        <i class="bi bi-stars"
+                            style="font-size: 3rem; color: var(--primary); display: block; margin-bottom: 1rem;"></i>
+                        <h4 class="premium-font" style="letter-spacing: 1px;">CITIZEN CHOICE</h4>
+                        <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted);">Top Rated On
+                            Gourmet Guide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Video Preview Section -->
+        <section id="video" class="reveal" style="background: var(--surface);">
+            <div class="container" style="text-align:center;">
+                <div
+                    style="aspect-ratio: 16/9; background: #000; border-radius: 40px; display: flex; align-items: center; justify-content: center; color: white;">
+                    <i class="bi bi-play-circle" style="font-size: 100px; cursor: pointer; color: var(--primary);"></i>
+                    <p style="position: absolute; bottom: 10%; width: 100%; font-size: 1.5rem;">Watch our Baker's
+                        Journey</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Seasonal Limited Edition -->
+        <section id="seasonal" class="reveal">
+            <div class="container section-title">
+                <h2>Spring Special Edition</h2>
+                <p>Available only until May 15th</p>
+            </div>
+            <div class="container grid-main">
+                <div class="cake-item" style="height: 300px;">
+                    <img src="assets/images/cake2.png" alt="Spring Cake">
+                    <div class="cake-overlay" style="opacity:1;">
+                        <h4>Sakura Bliss</h4>
+                    </div>
+                </div>
+                <div class="cake-item" style="height: 300px;">
+                    <img src="assets/images/cake3.png" alt="Spring Cake">
+                    <div class="cake-overlay" style="opacity:1;">
+                        <h4>Honey Lavender</h4>
+                    </div>
+                </div>
+                <div class="cake-item" style="height: 300px;">
+                    <img src="assets/images/hero-cake.png" alt="Spring Cake">
+                    <div class="cake-overlay" style="opacity:1;">
+                        <h4>Emerald Mint</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. FAQ -->
+        <section id="faq" class="reveal" style="background: var(--surface);">
+            <div class="container section-title">
+                <span
+                    style="color: var(--primary); font-weight: 600; letter-spacing: 3px; display: block; margin-bottom: 1rem;">FAQ</span>
+                <h2>Common Inquiries</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container grid-2col faq-grid">
+                    <div class="faq-item">
+                        <h4 class="premium-font" style="color: var(--primary); margin-bottom: 1rem;">How far in advance
+                            should I order?</h4>
+                        <p style="color: var(--text-muted); line-height: 1.6;">For bespoke wedding cakes, we recommend
+                            4-6 months. For signature collection cakes, a minimum of 72 hours is required for
+                            preparation.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="premium-font" style="color: var(--primary); margin-bottom: 1rem;">Do you deliver
+                            internationally?</h4>
+                        <p style="color: var(--text-muted); line-height: 1.6;">Currently, we deliver across Paris, New
+                            York, and London via our temperature-controlled fleet to ensure texture preservation.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="premium-font" style="color: var(--primary); margin-bottom: 1rem;">Are there vegan
+                            options?</h4>
+                        <p style="color: var(--text-muted); line-height: 1.6;">Our 'Botanical Range' features 100%
+                            plant-based masterpieces without compromising on the signature La Maison silkiness.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="premium-font" style="color: var(--primary); margin-bottom: 1rem;">Can I request a
+                            tasting?</h4>
+                        <p style="color: var(--text-muted); line-height: 1.6;">Absolutely. We host private tasting
+                            soirées at our flagship ateliers every Wednesday and Saturday. Reservation is required.</p>
+                    </div>
+                </div>
+        </section>
+
+        <!-- 13. Newsletter -->
+        <section id="newsletter" class="reveal" style="background: var(--primary); color: white;">
+            <div class="container" style="text-align: center;">
+                <h2 class="premium-font" style="font-size: 3rem;">Join The Elite Sweet-List</h2>
+                <p style="margin-bottom: 2.5rem;">Get exclusive access to seasonal launches and private event
+                    invitations.</p>
+                <form style="max-width: 500px; margin: 0 auto;">
+                    <input type="email" placeholder="Your Luxury Email Address"
+                        style="width: 100%; padding: 1.2rem 2.5rem; border-radius: 50px; border:none; outline:none; text-align: center; font-size: 1.1rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                </form>
+            </div>
+        </section>
+
+        <!-- 14. Instagram / Gallery -->
+        <section id="instagram" class="reveal">
+            <div class="container section-title">
+                <h2>Follow Us @LaMaison</h2>
+            </div>
+            <div class="container cake-gallery">
+                <img src="assets/images/cake1.png"
+                    style="width:100%; height:250px; object-fit:cover; border-radius:10px;">
+                <img src="assets/images/cake2.png"
+                    style="width:100%; height:250px; object-fit:cover; border-radius:10px;">
+                <img src="assets/images/cake3.png"
+                    style="width:100%; height:250px; object-fit:cover; border-radius:10px;">
+                <img src="assets/images/hero-cake.png"
+                    style="width:100%; height:250px; object-fit:cover; border-radius:10px;">
+            </div>
+        </section>
+
+        <!-- 15. Final CTA / Locations -->
+        <section id="final" class="reveal"
+            style="text-align: center; padding: 150px 0; background-color: var(--surface); position: relative; overflow: hidden;">
+            <div
+                style="position: absolute; top: -10%; right: -5%; font-size: 20rem; color: rgba(212, 175, 55, 0.03); font-family: var(--font-heading);">
+                LM</div>
+            <div class="container">
+                <span
+                    style="color: var(--primary); font-weight: 700; letter-spacing: 5px; display: block; margin-bottom: 2rem;">EXPERIENCE
+                    THE EXTRAORDINARY</span>
+                <h1 class="premium-font" style="font-size: 5rem; line-height: 1.1; margin-bottom: 2.5rem;">Where Sweet
+                    Dreams <br>Find Their Form</h1>
+                <p
+                    style="margin-bottom: 4rem; max-width: 700px; margin-inline: auto; font-size: 1.25rem; color: var(--text-muted); line-height: 1.8;">
+                    Join us at our flagship ateliers in the world's most iconic cities or let us bring the La Maison
+                    magic directly to your doorstep. Your celebration deserves nothing less than perfection.</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
+                    <a href="#" class="primary-btn" style="padding: 1.2rem 3.5rem;">Visit An Atelier</a>
+                    <a href="#"
+                        style="font-weight: 600; color: var(--primary); text-decoration: underline; text-underline-offset: 8px;">View
+                        Global Locations</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #1A1A1A; color: #FFFFFF; padding: 100px 0 40px; margin-top: 0;">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Logo & Info -->
+                <div class="footer-info">
+                    <div class="footer-logo"><img src="assets/images/logo.png" alt="Logo"></div>
+                    <p class="footer-desc">
+                        Defining the pinnacle of luxury bakery through artistry, passion, and the world's finest
+                        ingredients. Every creation tells a story of elegance.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Explore Section -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Explore</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Signature
+                                Collection</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Bespoke
+                                Creations</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Gifting &
+                                Favors</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Seasonal
+                                Editions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Section -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Company</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">The
+                                Maison Story</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Our
+                                Ateliers</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Careers</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Sustainability</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Address -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Contact</h4>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 2; font-weight: 300;">
+                        <p style="margin-bottom: 1rem;"><i class="bi bi-geo-alt"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> 123 Luxury Avenue, Manhattan,
+                            <br>New York City 10001
+                        </p>
+                        <p style="margin-bottom: 1rem;"><i class="bi bi-telephone"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> +1 (212) 555-0198</p>
+                        <p><i class="bi bi-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            concierge@lamaison.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 40px;">
+                <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">&copy; <span
+                        id="year"></span> La Maison Bakery. Designed with Passion.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#" style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">Privacy
+                        Policy</a>
+                    <a href="#" style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay (Strictly Mobile) -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-close" id="menu-close"><i class="bi bi-x-lg"></i></div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-item">
+                <a style="cursor: default;">Home <i class="bi bi-chevron-down" style="font-size: 0.8rem;"></i></a>
+                <div class="mobile-sublinks">
+                    <a href="index.html" class="active">- Home 1</a>
+                    <a href="home2.html">- Home 2</a>
+                </div>
+            </div>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-nav-item">
+                <a style="cursor: default;">Dashboard <i class="bi bi-chevron-down" style="font-size: 0.8rem;"></i></a>
+                <div class="mobile-sublinks">
+                    <a href="dashboard.html">- User Dashboard</a>
+                    <a href="admin-dashboard.html">- Admin Dashboard</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-secondary-btns">
+            <a href="#" class="login-btn">LOGIN</a>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

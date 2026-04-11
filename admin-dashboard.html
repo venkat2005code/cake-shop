@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Management Dashboard | La Maison Luxury Atelier</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <style>
+        /* Shared Dashboard Elite Architecture */
+        html {
+            height: 100%;
+            overflow: hidden;
+            /* Eliminates high-fidelity double-scroll collision */
+        }
+
+        body.dashboard-body {
+            display: flex;
+            height: 100%;
+            overflow-y: auto;
+            background: var(--background);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .dashboard-sidebar {
+            width: 280px;
+            background: #000;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+            border-right: 1px solid rgba(212, 175, 55, 0.15);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .dashboard-sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .dashboard-sidebar::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .sidebar-logo {
+            margin-bottom: 4rem;
+            padding: 0 1rem;
+        }
+
+        .sidebar-logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .sidebar-logo a {
+            display: block;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1rem 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #fff;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .nav-link.logout {
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2rem;
+            border-radius: 0;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .sidebar-footer .icon-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-footer .icon-btn:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .dashboard-main {
+            flex: 1;
+            margin-left: 280px;
+            padding: 4rem;
+            background: var(--background);
+        }
+
+        .dashboard-header {
+            margin-bottom: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary) !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem; /* Standard-setting prestigious spacing */
+        }
+
+        .chart-card {
+            background: transparent;
+            padding: 1rem;
+            border: none;
+            transition: all 0.3s ease;
+            height: 300px; /* Precision 'small' constraint for pie charts */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .chart-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* Mobile Adjustments for Admin Excellence */
+        .mobile-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 70px;
+            background: #000;
+            z-index: 1005;
+            padding: 0 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .mobile-header .user-avatar {
+            width: 40px !important;
+            height: 40px !important;
+            font-size: 1rem !important;
+            background: var(--primary) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: #000 !important;
+            font-weight: 700 !important;
+        }
+
+        .mobile-toggle {
+            background: transparent;
+            color: var(--primary);
+            font-size: 1.8rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1200px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .dashboard-sidebar {
+                transform: translateX(-100%);
+                padding-top: 90px !important;
+            }
+
+            .sidebar-logo {
+                padding-left: 2.5rem !important;
+                margin-bottom: 3rem !important;
+            }
+
+            .dashboard-sidebar.active {
+                transform: translateX(0);
+            }
+
+            .dashboard-main {
+                margin-left: 0 !important;
+                padding: 7rem 1.5rem 2.5rem !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+            }
+
+            .mobile-header {
+                display: flex !important;
+            }
+
+            .user-profile {
+                display: none !important;
+            }
+
+            .chart-card {
+                padding: 1rem !important;
+                height: 250px !important; /* Scaled down for mobile clarity */
+            }
+
+            .charts-grid {
+                gap: 3rem !important; /* Refined mobile spacing */
+            }
+        }
+    </style>
+</head>
+
+<body class="dashboard-body" data-theme="light">
+
+    <!-- Mobile Header (Admin Parity) -->
+    <div class="mobile-header">
+        <div class="user-avatar">ADM</div>
+        <button class="mobile-toggle" id="sidebar-toggle">
+            <i class="bi bi-list"></i>
+        </button>
+    </div>
+
+    <!-- Admin Sidebar Section -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+        <div class="sidebar-logo">
+            <a href="index.html"><img src="assets/images/logo.png" alt="La Maison Logo"></a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-link active"><i class="bi bi-speedometer2"></i> Admin Overview</a>
+            <a href="#" class="nav-link"><i class="bi bi-cart-check"></i> Orders Management</a>
+            <a href="#" class="nav-link"><i class="bi bi-people"></i> User Records</a>
+            <a href="#" class="nav-link"><i class="bi bi-box-seam"></i> Kitchen Inventory</a>
+            <a href="#" class="nav-link"><i class="bi bi-graph-up-arrow"></i> Financial Reports</a>
+            <a href="#" class="nav-link"><i class="bi bi-sliders"></i> Site Settings</a>
+            <a href="index.html" class="nav-link logout"><i class="bi bi-box-arrow-left"></i> Logout Portal</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="icon-btn" id="dir-toggle-dash" title="Toggle RTL/LTR"><i class="bi bi-globe"></i></button>
+            <button class="icon-btn" id="theme-toggle-dash" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        </div>
+    </aside>
+
+    <!-- Admin Main Area -->
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div></div>
+            <div class="user-profile">
+                <div class="user-avatar">ADM</div>
+            </div>
+        </header>
+
+        <!-- Admin Charts Grid -->
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>Global Revenue Stream</h3>
+                <canvas id="adminChart1"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Active Patron Growth</h3>
+                <canvas id="adminChart2"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Product Category Share</h3>
+                <canvas id="adminChart3"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Atelier Fulfillment Rate</h3>
+                <canvas id="adminChart4"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Inventory Stock Health</h3>
+                <canvas id="adminChart5"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Marketing Conversion</h3>
+                <canvas id="adminChart6"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: {
+                    display: true,
+                    beginAtZero: true,
+                    grid: { color: 'rgba(212, 175, 55, 0.05)' },
+                    ticks: { color: 'rgba(255,255,255,0.4)', font: { family: 'Outfit' } }
+                },
+                x: {
+                    display: true,
+                    grid: { display: false },
+                    ticks: { color: 'rgba(255,255,255,0.4)', font: { family: 'Outfit' } }
+                }
+            }
+        };
+
+        // Admin Chart 1: Revenue (Pie - Replaced Line)
+        new Chart(document.getElementById('adminChart1'), {
+            type: 'pie',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    data: [450, 780, 620, 950],
+                    backgroundColor: ['#D4AF37', '#1A1A1A', '#333', '#555'],
+                    borderWidth: 0
+                }]
+            },
+            options: { ...chartOptions, scales: null }
+        });
+
+        // Admin Chart 2: User Growth (Pie - Replaced Bar)
+        new Chart(document.getElementById('adminChart2'), {
+            type: 'pie',
+            data: {
+                labels: ['Active', 'New', 'Regular', 'VIP'],
+                datasets: [{
+                    data: [150, 250, 200, 350],
+                    backgroundColor: ['#D4AF37', '#222', '#444', '#666'],
+                    borderWidth: 0
+                }]
+            },
+            options: { ...chartOptions, scales: null }
+        });
+
+        // Admin Chart 3: Product Share (Pie)
+        new Chart(document.getElementById('adminChart3'), {
+            type: 'pie',
+            data: {
+                labels: ['Cakes', 'Pastries', 'Drinks', 'Custom'],
+                datasets: [{
+                    data: [40, 30, 20, 10],
+                    backgroundColor: ['#D4AF37', '#1A1A1A', '#333', '#555'],
+                    borderWidth: 0
+                }]
+            },
+            options: { ...chartOptions, scales: null }
+        });
+
+        // Admin Chart 4: Fulfillment (Doughnut)
+        new Chart(document.getElementById('adminChart4'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Completed', 'Pending'],
+                datasets: [{
+                    data: [85, 15],
+                    backgroundColor: ['#D4AF37', '#1A1A1A'],
+                    borderWidth: 0
+                }]
+            },
+            options: { ...chartOptions, scales: null }
+        });
+
+        // Admin Chart 5: Stock (Polar Area)
+        new Chart(document.getElementById('adminChart5'), {
+            type: 'polarArea',
+            data: {
+                labels: ['Flour', 'Sugar', 'Butter', 'Cocoa'],
+                datasets: [{
+                    data: [90, 70, 50, 80],
+                    backgroundColor: ['rgba(212, 175, 55, 0.8)', '#1A1A1A', '#333', '#555']
+                }]
+            },
+            options: { ...chartOptions, scales: null }
+        });
+
+        // Admin Chart 6: Marketing (Radar)
+        new Chart(document.getElementById('adminChart6'), {
+            type: 'radar',
+            data: {
+                labels: ['Search', 'Social', 'Email', 'Affiliate', 'Direct'],
+                datasets: [{
+                    data: [80, 95, 70, 60, 90],
+                    borderColor: '#D4AF37',
+                    backgroundColor: 'rgba(212, 175, 55, 0.2)',
+                    pointRadius: 0
+                }]
+            },
+            options: { ...chartOptions, scales: { r: { display: false } } }
+        });
+
+        // Interactions
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('dashboard-sidebar');
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            sidebarToggle.querySelector('i').classList.toggle('bi-list');
+            sidebarToggle.querySelector('i').classList.toggle('bi-x-lg');
+        });
+
+        document.getElementById('theme-toggle-dash').addEventListener('click', () => {
+            const body = document.body;
+            const newTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            document.querySelector('#theme-toggle-dash i').className = newTheme === 'light' ? 'bi bi-moon-stars-fill' : 'bi bi-sun-fill';
+        });
+
+        document.getElementById('dir-toggle-dash').addEventListener('click', () => {
+            document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+        });
+    </script>
+</body>
+</html>

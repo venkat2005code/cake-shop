@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Our Concierge | La Maison Luxury Patisserie</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <style>
+        .contact-form-container {
+            background: var(--surface);
+            padding: 5rem;
+            border-radius: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--background);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1.2rem;
+            border-radius: 12px;
+            color: var(--text);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .form-control {
+            background: #111111;
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-info-card {
+            padding: 3rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] .contact-info-card {
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .step-number {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: rgba(212, 175, 55, 0.1);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .faq-item {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] .faq-item {
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.png" alt="La Maison Logo"></a>
+            </div>
+            <nav class="nav-center">
+                <div class="nav-item">
+                    <span>Home <i class="bi bi-chevron-down"></i></span>
+                    <ul class="dropdown">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item"><a href="about.html">About</a></div>
+                <div class="nav-item"><a href="services.html">Services</a></div>
+                <div class="nav-item active"><a href="contact.html">Contact</a></div>
+                <div class="nav-item">
+                    <span>Dashboard <i class="bi bi-chevron-down"></i></span>
+                    <ul class="dropdown">
+                        <li><a href="dashboard.html">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="nav-right">
+                <button class="icon-btn" id="dir-toggle" title="Toggle LTR/RTL"><i class="bi bi-globe"></i></button>
+                <button class="icon-btn" id="theme-toggle" title="Toggle Light/Dark Theme"><i
+                        class="bi bi-moon-stars-fill"></i></button>
+                <a href="login.html" class="login-btn">LOGIN</a>
+                <div class="hamburger"><i class="bi bi-list"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Redesign: Immersive Concierge -->
+        <section class="reveal"
+            style="min-height: 90vh; background: url('assets/images/bakery-interior.png') center/cover; position: relative; display: flex; align-items: center; justify-content: center; padding-top: 100px;">
+            <div style="position: absolute; inset:0; background: var(--background); opacity: 0.6;"></div>
+            <div class="container" style="position: relative; z-index: 2; text-align: center;">
+                <span style="color: var(--primary); font-weight: 700; letter-spacing: 12px; text-transform: uppercase; display: block; margin-bottom: 2rem;"></span>
+                <h1 class="premium-font h1-heading" style="line-height: 1.1; margin-bottom: 3rem;">A World Of <br>Infinite Possibility</h1>
+                <p style="margin: 0 auto 4rem; max-width: 700px; color: var(--text-muted); font-size: 1.25rem;">From global wedding commissions to private residential residencies, our concierge provides direct access to the world's most elite patisserie team.</p>
+                <div style="display: flex; justify-content: center; gap: 2.5rem;">
+                    <a href="#commission" class="primary-btn" style="padding: 1.5rem 4rem;">Open Commission Brief</a>
+                    <a href="#ateliers" class="secondary-btn" style="padding: 1.5rem 4rem;">Visit An Atelier</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Booking Journey (Steps) -->
+        <section id="journey" class="reveal" style="padding: 15rem 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <div class="container section-title">
+                <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px;">THE PROCESS</span>
+                <h2 class="premium-font h1-heading" style="margin-top: 1.5rem;">Four Stages to Perfection</h2>
+            </div>
+            <div class="container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                <!-- Step 01 -->
+                <div class="process-step-card"
+                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
+                    <span
+                        style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">01</span>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Brief</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">Initial consultation to capture your event's architectural soul and vision.</p>
+                </div>
+                <!-- Step 02 -->
+                <div class="process-step-card"
+                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
+                    <span
+                        style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">02</span>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Tasting</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">A private sensory immersion in our flagship atelier room.</p>
+                </div>
+                <!-- Step 03 -->
+                <div class="process-step-card"
+                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
+                    <span
+                        style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">03</span>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Build</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">Technical construction and multi-layer hand-painted finishing.</p>
+                </div>
+                <!-- Step 04 -->
+                <div class="process-step-card"
+                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
+                    <span
+                        style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">04</span>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Arrival</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">White-glove placement by our specialized logistics team.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Commission Form Section (Redesigned Alignment) -->
+        <section id="commission" class="reveal" style="padding: 120px 0; background: var(--surface);">
+            <div class="container grid-2col commission-grid" style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 10rem;">
+                <!-- Left: Touchpoints -->
+                <div id="ateliers">
+                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin-bottom: 5rem;">Global <br>Touchpoints</h2>
+                    <div class="grid-2col touchpoint-grid" style="display: grid; gap: 4rem;">
+                        <div class="touchpoint-item">
+                            <h5 style="font-weight: 700; color: var(--primary); letter-spacing: 3px; margin-bottom: 1.5rem; font-size: 0.9rem;">NEW YORK</h5>
+                            <p style="line-height: 2; color: var(--text-muted); font-size: 1.05rem;">123 Fifth Avenue, Upper East Side<br>NY 10021, USA<br>T: +1 (212) 555-0198</p>
+                        </div>
+                        <div class="touchpoint-item">
+                            <h5 style="font-weight: 700; color: var(--primary); letter-spacing: 3px; margin-bottom: 1.5rem; font-size: 0.9rem;">PARIS</h5>
+                            <p style="line-height: 2; color: var(--text-muted); font-size: 1.05rem;">Place Vendôme, Luxury Quarter<br>75001 Paris, France<br>T: +33 1 40 20 50 50</p>
+                        </div>
+                        <div class="touchpoint-item">
+                            <h5 style="font-weight: 700; color: var(--primary); letter-spacing: 3px; margin-bottom: 1.5rem; font-size: 0.9rem;">LONDON</h5>
+                            <p style="line-height: 2; color: var(--text-muted); font-size: 1.05rem;">Savile Row, Mayfair<br>London W1S 3PR, UK<br>T: +44 20 7434 2000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div>
+                    <!-- Aligning title with left column -->
+                    <h2 class="premium-font h1-heading" style="margin-bottom: 2rem; line-height: 1.1;">Find Us In
+                        <br>Manhattan</h2>
+                    <div class="contact-form-container" style="padding: 4rem; margin-top: 0;">
+                        <form>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+                                <div class="form-group">
+                                    <label>Your Identity</label>
+                                    <input type="text" class="form-control" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Connection</label>
+                                    <input type="email" class="form-control" placeholder="example@luxury.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Service Domain</label>
+                                <select class="form-control">
+                                    <option>Couture Wedding</option>
+                                    <option>Private Estate Residency</option>
+                                    <option>Corporate Institutional Gala</option>
+                                    <option>Special Commission</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Vision</label>
+                                <textarea class="form-control" rows="8" placeholder="Describe the atmosphere, inspirations, and structural requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="primary-btn" style="width: 100%; padding: 1.8rem; border-radius: 12px; font-size: 1.1rem; letter-spacing: 1px;">Submit Brief to Concierge</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Media & Press Relations -->
+        <section class="reveal" style="padding: 100px 0; background: #000; color: white;">
+            <div class="container" style="text-align: center;">
+                <h4 class="premium-font" style="font-size: 3.2rem; margin-bottom: 2rem;">Media & Press Kit</h4>
+                <p style="color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 4rem;">For all publication inquiries, high-resolution asset requests, and interview coordination with our Master Patissiers.</p>
+                <div style="display: flex; justify-content: center; gap: 3rem;">
+                    <a href="#" style="font-weight: 700; color: var(--primary); text-decoration: underline; text-underline-offset: 8px;">Download Press Kit</a>
+                    <a href="mailto:press@lamaison.com" style="font-weight: 700; color: var(--primary); text-decoration: underline; text-underline-offset: 8px;">Email Media Desk</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Careers & Master Artistry -->
+        <section class="reveal" style="padding: 120px 0;">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 8rem; align-items: center;">
+                <div>
+                    <h2 class="premium-font" style="font-size: 4rem; line-height: 1.1; margin-bottom: 3rem;">Shape The <br>Future of Taste</h2>
+                    <p style="font-size: 1.15rem; line-height: 2; color: var(--text-muted); margin-bottom: 4rem;">We are always in pursuit of the next generation of master artisans. If you possess a relentless drive for perfection and a background in classical French architecture or fine arts, we invite you to inquire about our residency programs.</p>
+                    <a href="#" class="secondary-btn">View Artist Openings</a>
+                </div>
+                <div style="aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 1px solid var(--primary); padding: 15px;">
+                    <img src="assets/images/cake3.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. The Connoisseur's FAQ -->
+        <section class="reveal" style="padding: 120px 0; background: var(--surface);">
+            <div class="container section-title">
+                <h2 class="premium-font" style="font-size: 4rem;">Connoisseur's FAQ</h2>
+            </div>
+            <div class="container" style="max-width: 800px;">
+                <div class="faq-item">
+                    <h5 style="font-weight: 700; margin-bottom: 1rem;">What is the typical lead time for a Couture Wedding?</h5>
+                    <p style="color: var(--text-muted); line-height: 1.8;">We recommend initiating the Commission Brief at least 6 to 9 months in advance. For destination weddings, 12 months is preferred to ensure logistical perfection.</p>
+                </div>
+                <div class="faq-item">
+                    <h5 style="font-weight: 700; margin-bottom: 1rem;">Do you offer global shipping for bespoke cakes?</h5>
+                    <p style="color: var(--text-muted); line-height: 1.8;">Yes. We operate a private, temperature-controlled fleet for local deliveries and utilize specialized climate-controlled air freight for international commissions.</p>
+                </div>
+                <div class="faq-item">
+                    <h5 style="font-weight: 700; margin-bottom: 1rem;">Can I request a personalized flavor landscape?</h5>
+                    <p style="color: var(--text-muted); line-height: 1.8;">Absolutely. During your Private Tasting at the atelier, we work with you to map ingredients from your own history—honey from your estate, or botanical infusions found in your childhood garden.</p>
+                </div>
+                <div class="faq-item" style="border: none;">
+                    <h5 style="font-weight: 700; margin-bottom: 1rem;">Is the Private Residency available globally?</h5>
+                    <p style="color: var(--text-muted); line-height: 1.8;">The Residency program is available in North America, Europe, and Asia. For locations outside these regions, additional logistical planning is required.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer style="background: #1A1A1A; color: #FFFFFF; padding: 100px 0 40px; margin-top: 0;">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Logo & Info -->
+                <div class="footer-info">
+                    <div class="footer-logo"><img src="assets/images/logo.png" alt="Logo"></div>
+                    <p class="footer-desc">
+                        Defining the pinnacle of luxury bakery through artistry, passion, and the world's finest
+                        ingredients. Every creation tells a story of elegance.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Explore Section -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Explore</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Signature
+                                Collection</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Bespoke
+                                Creations</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Gifting &
+                                Favors</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Seasonal
+                                Editions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Section -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Company</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li><a href="about.html"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">The
+                                Maison Story</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Our
+                                Ateliers</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Careers</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Sustainability</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Address -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Contact</h4>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 2; font-weight: 300;">
+                        <p style="margin-bottom: 1rem;"><i class="bi bi-geo-alt"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> 123 Luxury Avenue, Manhattan,
+                            <br>New York City 10001
+                        </p>
+                        <p style="margin-bottom: 1rem;"><i class="bi bi-telephone"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> +1 (212) 555-0198</p>
+                        <p><i class="bi bi-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            concierge@lamaison.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 40px;">
+                <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">&copy; <span
+                        id="year"></span> La Maison Bakery. Designed with Passion.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#" style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">Privacy
+                        Policy</a>
+                    <a href="#" style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay (Strictly Mobile - Mirrored from Index) -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-close" id="menu-close"><i class="bi bi-x-lg"></i></div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-item">
+                <a style="cursor: default;">Home <i class="bi bi-chevron-down" style="font-size: 0.8rem;"></i></a>
+                <div class="mobile-sublinks">
+                    <a href="index.html">- Home 1</a>
+                    <a href="home2.html">- Home 2</a>
+                </div>
+            </div>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html" class="active">Contact</a>
+            <div class="mobile-nav-item">
+                <a style="cursor: default;">Dashboard <i class="bi bi-chevron-down" style="font-size: 0.8rem;"></i></a>
+                <div class="mobile-sublinks">
+                    <a href="dashboard.html">- User Dashboard</a>
+                    <a href="admin-dashboard.html">- Admin Dashboard</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-secondary-btns">
+            <a href="#" class="login-btn">LOGIN</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

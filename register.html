@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | La Maison Luxury Atelier</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <style>
+        /* Auth Page Specialized Architecture */
+        .auth-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--background);
+            position: relative;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 500px;
+            background: var(--surface);
+            padding: 3.5rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .auth-logo {
+            margin-bottom: 2.5rem;
+        }
+
+        .auth-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .auth-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .auth-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: var(--background);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .form-control {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.05);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--primary);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .auth-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .auth-footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .auth-footer a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+
+        /* Top Corner Controls - Precision Placement */
+        .top-controls {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: var(--surface);
+            color: var(--text);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .control-btn:hover {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        .back-home {
+            position: fixed;
+            top: 30px;
+            left: 40px;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-home:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .auth-container {
+                padding: 2.5rem 1.5rem !important;
+                border-radius: 20px;
+            }
+            .auth-logo img {
+                height: 45px !important;
+            }
+            .auth-header h1 {
+                font-size: 1.8rem;
+            }
+            .top-controls {
+                top: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Top Corner Controls -->
+    <div class="top-controls">
+        <button class="control-btn" id="dir-toggle-auth" title="Toggle RTL/LTR"><i class="bi bi-globe"></i></button>
+        <button class="control-btn" id="theme-toggle-auth" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+    </div>
+
+    <div class="auth-wrapper">
+        <div class="auth-container">
+            <div class="auth-logo">
+                <a href="index.html"><img src="assets/images/logo.png" alt="La Maison Logo"></a>
+            </div>
+            <div class="auth-header">
+                <h1>Join the Atelier</h1>
+                <p>Register for exclusive luxury specialty features</p>
+            </div>
+            
+            <form action="dashboard.html">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" placeholder="Monsieur" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" placeholder="Julian" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="monsieur@lamaison.com" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Create high-fidelity password" required>
+                    </div>
+                </div>
+                <div style="text-align: left; margin-bottom: 2rem;">
+                    <label style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;">
+                        <input type="checkbox" style="margin-right: 0.5rem;" required> I agree to the Elite Terms & Conditions
+                    </label>
+                </div>
+                <button type="submit" class="auth-btn">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                Already a member? <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Precision Controls Logic
+        document.getElementById('theme-toggle-auth').addEventListener('click', () => {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            const icon = document.querySelector('#theme-toggle-auth i');
+            icon.className = newTheme === 'light' ? 'bi bi-moon-stars-fill' : 'bi bi-sun-fill';
+        });
+
+        document.getElementById('dir-toggle-auth').addEventListener('click', () => {
+            const html = document.documentElement;
+            html.dir = html.dir === 'rtl' ? 'ltr' : 'rtl';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Maison | Home 2 - The Modern Atelier</title>
+    <!-- Google Fonts: Playfair Display & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body data-theme="dark">
+
+    <!-- Header Section -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.png" alt="La Maison Logo"></a>
+            </div>
+
+            <nav class="nav-center">
+                <div class="nav-item active">
+                    <span>Home <i class="bi bi-chevron-down"></i></span>
+                    <ul class="dropdown">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item"><a href="about.html">About</a></div>
+                <div class="nav-item"><a href="services.html">Services</a></div>
+                <div class="nav-item"><a href="contact.html">Contact</a></div>
+                <div class="nav-item">
+                    <span>Dashboard <i class="bi bi-chevron-down"></i></span>
+                    <ul class="dropdown">
+                        <li><a href="dashboard.html">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="nav-right">
+                <button class="icon-btn" id="dir-toggle" title="Toggle LTR/RTL"><i class="bi bi-globe"></i></button>
+                <button class="icon-btn" id="theme-toggle" title="Toggle Light/Dark Theme"><i
+                        class="bi bi-moon-stars-fill"></i></button>
+                <a href="login.html" class="login-btn">LOGIN</a>
+                <div class="hamburger"><i class="bi bi-list"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home 2 Main Content -->
+    <main>
+        <!-- 1. Modern Split Hero -->
+        <section id="hero2" class="hero" style="background: #000000; overflow: hidden; display: flex; align-items: center;">
+            <div class="container hero-wrapper">
+                <div class="hero-content reveal" style="text-align: left;">
+                    <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px; margin-bottom: 2rem; display: block;">EST. 1924</span>
+                    <h1 class="premium-font h1-heading" style="line-height: 0.9; color: white;">The Art <br>Of Modern <br>Patisserie</h1>
+                    <p style="color: rgba(255,255,255,0.5); font-size: 1.2rem; margin-top: 3rem; max-width: 500px; line-height: 1.8;">Where centuries of French tradition meet a contemporary avant-garde vision of dessert.</p>
+                    <div style="margin-top: 4rem;" class="hero-btns">
+                        <a href="#" class="primary-btn" style="padding: 1.2rem 4rem;">Enter The Atelier</a>
+                    </div>
+                </div>
+                <div class="hero-image reveal" style="position: relative;">
+                    <img src="assets/images/hero-cake.png" alt="Modern Cake" style="filter: sepia(0.2) contrast(1.1);">
+                    <div style="position: absolute; bottom: 10%; right: 10%; color: white; writing-mode: vertical-rl; font-weight: 300; letter-spacing: 15px; opacity: 0.3;">COLLECTION MMXXIV</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Legacy of Taste -->
+        <section id="legacy" class="reveal" style="padding: 80px 0; background: var(--background);">
+            <div class="container grid-2col legacy-grid">
+                <div>
+                    <span
+                        style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">OUR
+                        HERITAGE</span>
+                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin-top: 1.5rem;">A Century
+                        Of <br>Avant-Garde <br>Patisserie</h2>
+                </div>
+                <div style="border-left: 1px solid rgba(212, 175, 55, 0.2); padding-left: 5rem;">
+                    <p style="font-size: 1.2rem; line-height: 2; color: var(--text-muted); margin-bottom: 2rem;">Founded
+                        in 1924, La Maison has redefined the boundaries of sugar and flour. We treat every cake as a
+                        sculptural masterpiece, blending architectural precision with the soul of French tradition.</p>
+                    <a href="#"
+                        style="color: var(--primary); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--primary); padding-bottom: 5px; letter-spacing: 2px; font-size: 0.9rem;">DISCOVER
+                        OUR ROOTS</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Tasting Atelier (New Wish Section) -->
+        <section id="tasting-atelier" class="reveal"
+            style="padding: 80px 0; background: var(--surface); position: relative; overflow: hidden;">
+            <div
+                style="position: absolute; top: -10%; right: -5%; font-size: 25rem; color: rgba(212, 175, 55, 0.05); font-family: var(--font-heading); pointer-events: none;">
+                TA</div>
+            <div class="container grid-2col tasting-grid">
+                <div class="atelier-image" style="position: relative;">
+                    <div
+                        style="width: 100%; aspect-ratio: 1; border-radius: 50% 50% 0 50%; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.1);">
+                        <img src="assets/images/bakery-interior.png" alt="Tasting Room"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 10%; right: -10%; background: var(--background); padding: 3rem; border-radius: 20px; border: 1px solid var(--primary); box-shadow: 20px 20px 40px rgba(0,0,0,0.05);">
+                        <h4 class="premium-font" style="color: var(--primary); font-size: 1.5rem;">Private Soirée</h4>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Limited to 4 Guests
+                        </p>
+                    </div>
+                </div>
+                <div class="atelier-content">
+                    <span
+                        style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase; font-size: 0.85rem;">EXCLUSIVITY</span>
+                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin: 2rem 0;">The Tasting
+                        <br>Atelier
+                    </h2>
+                    <p style="font-size: 1.15rem; line-height: 2; color: var(--text-muted); margin-bottom: 3rem;">Step
+                        into our private chamber where secrets of flavor are unveiled. A curated 7-course exploration of
+                        rare seasonal botanicals, vintage cacao origins, and the architectural philosophy behind our
+                        most iconic creations.</p>
+                    <ul style="margin-bottom: 4rem; display: grid; gap: 1.5rem;">
+                        <li style="display: flex; align-items: center; gap: 1.5rem;"><i class="bi bi-check2-circle"
+                                style="color: var(--primary); font-size: 1.5rem;"></i> <span
+                                style="font-weight: 500;">Private Consultation with Chef Julien</span></li>
+                        <li style="display: flex; align-items: center; gap: 1.5rem;"><i class="bi bi-check2-circle"
+                                style="color: var(--primary); font-size: 1.5rem;"></i> <span
+                                style="font-weight: 500;">Limited Harvest Ingredient Samples</span></li>
+                        <li style="display: flex; align-items: center; gap: 1.5rem;"><i class="bi bi-check2-circle"
+                                style="color: var(--primary); font-size: 1.5rem;"></i> <span
+                                style="font-weight: 500;">Bespoke Flavor Profile Mapping</span></li>
+                    </ul>
+                    <a href="#" class="primary-btn">Reserve Your Chair</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. The Atelier Menu (Modern List) -->
+        <section id="menu2" class="reveal" style="background: var(--background); padding: 80px 0;">
+            <div class="container" style="max-width: 1100px;">
+                <div style="text-align: center; margin-bottom: 6rem;">
+                    <span
+                        style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase;">TODAY'S
+                        SELECTION</span>
+                    <h2 class="premium-font" style="font-size: 3.5rem; margin-top: 1rem;">The Patisserie Menu</h2>
+                </div>
+                <div class="grid-2col menu-grid">
+                    <div>
+                        <div class="menu-item-row">
+                            <h4 class="premium-font" style="font-size: 1.6rem; color: var(--text);">Noir Truffle</h4>
+                            <span style="color: var(--primary); font-weight: 600;">$14 / SLICE</span>
+                            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                                70% Dark Cacao, Madagascar Vanilla</p>
+                        </div>
+                        <div class="menu-item-row">
+                            <h4 class="premium-font" style="font-size: 1.6rem; color: var(--text);">Sicilian Rain</h4>
+                            <span style="color: var(--primary); font-weight: 600;">$12 / SLICE</span>
+                            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                                Pressed Lemon, Mascarpone, Sea Salt</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="menu-item-row">
+                            <h4 class="premium-font" style="font-size: 1.6rem; color: var(--text);">Rose Velvet</h4>
+                            <span style="color: var(--primary); font-weight: 600;">$15 / SLICE</span>
+                            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                                Hibiscus Syrup, White Chocolate Ganache</p>
+                        </div>
+                        <div class="menu-item-row">
+                            <h4 class="premium-font" style="font-size: 1.6rem; color: var(--text);">Golden Opera</h4>
+                            <span style="color: var(--primary); font-weight: 600;">$16 / SLICE</span>
+                            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                                Coffee Soak, 24K Gold Dust, Almond</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Midnight Collection (Enhanced Split) -->
+        <section id="midnight" class="reveal" style="padding: 80px 0;">
+            <div class="container grid-2col" style="align-items: center; gap: 8rem;">
+                <div class="midnight-img-container" style="position: relative;">
+                    <div style="width: 100%; aspect-ratio: 4/5; border-radius: 400px 400px 0 0; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.15);">
+                        <img src="assets/images/cake1.png" alt="Dark Cake" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="content-reveal">
+                    <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px;">EXCLUSIVE RELEASE</span>
+                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin: 2rem 0;">The Midnight <br>Anthology</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 3rem;">A daring exploration of shadows and sweetness. This private series features rare black-seed cacao and midnight blossoms, reserved for the most discerning palates.</p>
+                    <a href="#" class="primary-btn">Acquire The Private Series</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Bespoke Bridal (Overlapping Art) -->
+        <section id="bridal" class="reveal" style="padding: 80px 0; background: var(--surface);">
+            <div class="container grid-2col" style="align-items: center;">
+                <div class="bridal-image" style="position: relative; border-radius: 300px 0 300px 0; overflow: hidden; box-shadow: 20px 20px 0 var(--primary);">
+                    <img src="assets/images/cake3.png" alt="Wedding Cake" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9);">
+                </div>
+                <div class="content-reveal" style="background: var(--background); padding: 4rem; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: -30px 30px 60px rgba(0,0,0,0.05);">
+                    <h2 class="premium-font h1-heading" style="margin-bottom: 2rem;">Couture <br>Bridal Registry</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.8;">Beyond the cake, we curate the legacy. Our bridal concierge transforms your wedding vision into an edible masterpiece of timeless grace.</p>
+                    <a href="#" style="font-weight: 700; color: var(--primary); letter-spacing: 2px;">SCHEDULE A SOIRÉE</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Meet The Master (Portrait focus) -->
+        <section id="master" class="reveal" style="padding: 80px 0;">
+            <div class="container" style="text-align: center;">
+                <div
+                    style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: 0 auto 4rem; border: 1px solid var(--primary); padding: 15px; background: var(--background);">
+                    <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden;">
+                        <img src="assets/images/bakery-interior.png" alt="Chef Placeholder"
+                            style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.2);">
+                    </div>
+                </div>
+                <span
+                    style="letter-spacing: 10px; color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">THE
+                    VISIONARY</span>
+                <h3 class="premium-font" style="font-size: 3.5rem; margin: 1.5rem 0;">Julien De La Roche</h3>
+                <p
+                    style="max-width: 700px; margin: 0 auto; font-size: 1.25rem; line-height: 1.8; color: var(--text-muted); font-style: italic;">
+                    "A cake is the final punctuation of a perfect evening. It must be silent, beautiful, and absolutely
+                    unforgettable."</p>
+            </div>
+        </section>
+
+        <!-- 9. Gift Experience (SVG Placeholders) -->
+        <section id="gifting" class="reveal" style="background: var(--surface); padding: 80px 0;">
+            <div class="container section-title">
+                <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px;">THE GIFTING ATELIER</span>
+                <h2 class="premium-font" style="margin-top: 1rem;">Tokens Of Affection</h2>
+            </div>
+            <div class="container grid-main" style="gap: 5rem;">
+                <div class="feature-card" style="background: var(--background); padding: 5rem 3rem;">
+                    <i class="bi bi-box2-heart" style="font-size: 4rem; color: var(--primary);"></i>
+                    <h4 class="premium-font" style="margin-top: 2rem; font-size: 1.5rem;">Velvet Signature Box</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">Hand-wrapped in silk
+                        velvet with gold-embossed seals.</p>
+                </div>
+                <div class="feature-card" style="background: var(--background); padding: 5rem 3rem;">
+                    <i class="bi bi-envelope-paper" style="font-size: 4rem; color: var(--primary);"></i>
+                    <h4 class="premium-font" style="margin-top: 2rem; font-size: 1.5rem;">Calligraphy Service</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">Bespoke messages
+                        written by our in-house master calligrapher.</p>
+                </div>
+                <div class="feature-card" style="background: var(--background); padding: 5rem 3rem;">
+                    <i class="bi bi-gem" style="font-size: 4rem; color: var(--primary);"></i>
+                    <h4 class="premium-font" style="margin-top: 2rem; font-size: 1.5rem;">The Jewel Series</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">A collection of
+                        individual, edible gems for grand gestures.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. The Sourcing (Minimal Type) -->
+        <section id="sourcing" class="reveal" style="padding: 80px 0;">
+            <div class="container" style="text-align: center; max-width: 900px;">
+                <div style="width: 2px; height: 100px; background: var(--primary); margin: 0 auto 3rem;"></div>
+                <h2 class="premium-font h1-heading" style="margin-bottom: 2.5rem; line-height: 1.1;">Purity
+                    Without <br>Compromise</h2>
+                <p style="line-height: 2.2; font-size: 1.3rem; color: var(--text-muted); font-weight: 300;">We partner
+                    exclusively with family-owned farms. From the organic cultured butter of lower Normandy to the rare
+                    hand-harvested sea salt of Guerande, our ingredient ledger is a map of the world's finest biological
+                    treasures.</p>
+            </div>
+        </section>
+
+        <!-- 11. Milestone Gallery (Clean Mosaic) -->
+        <section id="mosaic" class="reveal" style="padding: 0;">
+            <div class="cake-gallery">
+                <div style="position: relative; overflow: hidden; height: 500px;" class="gallery-item">
+                    <img src="assets/images/cake1.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="position: relative; overflow: hidden; height: 500px;" class="gallery-item">
+                    <img src="assets/images/cake2.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="position: relative; overflow: hidden; height: 500px;" class="gallery-item">
+                    <img src="assets/images/cake3.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="position: relative; overflow: hidden; height: 500px;" class="gallery-item">
+                    <img src="assets/images/hero-cake.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. The Private Fleet (New Wish Section) -->
+        <section id="private-fleet" class="reveal"
+            style="padding: 80px 0; background: #000000; color: white; position: relative; overflow: hidden;">
+            <div class="container grid-2col" style="align-items: center; gap: 8rem;">
+                <div class="fleet-content content-reveal">
+                    <span
+                        style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase;">PERFECTION
+                        PRESERVED</span>
+                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin: 2rem 0;">The Private
+                        <br>White-Glove Fleet
+                    </h2>
+                    <p style="font-size: 1.15rem; line-height: 2; color: rgba(255,255,255,0.6); margin-bottom: 3.5rem;">
+                        Luxury is as much about the shadow as the light. Our temperature-controlled private fleet
+                        ensures that every micro-detail of your masterpiece arrives in the exact same condition it left
+                        the atelier—pristine, perfect, and precisely on time.</p>
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                            <div
+                                style="width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="bi bi-thermometer-snow" style="color: var(--primary); font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h4 class="premium-font" style="font-size: 1.4rem; margin-bottom: 0.5rem;">Climate
+                                    Integrity</h4>
+                                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.4);">Maintained at a constant
+                                    14°C to preserve texture and luster.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                            <div
+                                style="width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="bi bi-geo-fill" style="color: var(--primary); font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h4 class="premium-font" style="font-size: 1.4rem; margin-bottom: 0.5rem;">Live
+                                    Telemetry</h4>
+                                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.4);">Real-time tracking of your
+                                    creation from our oven to your doorstep.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fleet-image" style="position: relative;">
+                    <div
+                        style="background: rgba(212, 175, 55, 0.05); padding: 4rem; border-radius: 50% 50% 50% 0; border: 1px solid rgba(212, 175, 55, 0.2);">
+                        <img src="assets/images/bakery-interior.png" alt="Fleet Vehicle"
+                            style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 50% 50% 50% 0; filter: contrast(1.1) brightness(0.8);">
+                    </div>
+                    <div
+                        style="position: absolute; top: 10%; left: -10%; background: var(--primary); color: #000; padding: 1.5rem 3rem; border-radius: 50px; font-weight: 700; letter-spacing: 2px; box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);">
+                        WORLDWIDE ELITE</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. High-Fidelity App Teaser -->
+        <section id="digital" class="reveal" style="padding: 80px 0;">
+            <div class="container grid-2col digital-grid" style="background: var(--background); border: 1px solid rgba(212, 175, 55, 0.2); padding: 4rem; border-radius: 60px; box-shadow: 0 50px 100px rgba(0,0,0,0.05); align-items: center;">
+                <div class="content-reveal">
+                    <h2 class="premium-font h1-heading" style="line-height: 1; margin-bottom: 2rem;">The Digital
+                        <br>Concierge
+                    </h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 3.5rem;">
+                        Access the 'Daily Drop', track your bespoke creations in high-definition, and manage your global
+                        tasting reservations with our dedicated mobile experience.</p>
+                    <div style="display: flex; gap: 2rem;">
+                        <a href="#" class="primary-btn" style="background: var(--text); color: var(--background);"><i
+                                class="bi bi-apple"></i> IOS APP</a>
+                        <a href="#" class="primary-btn" style="background: var(--text); color: var(--background);"><i
+                                class="bi bi-google-play"></i> ANDROID</a>
+                    </div>
+                </div>
+                <div style="text-align: center; position: relative;">
+                    <div class="digital-icon-container"
+                        style="width: 100%; aspect-ratio: 1; border: 1px solid var(--primary); border-radius: 50%; padding: 40px;">
+                        <i class="bi bi-phone" style="font-size: 15rem; color: var(--primary); opacity: 1;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. The Exhibition (Final Wish Section) -->
+        <section id="exhibition" class="reveal"
+            style="text-align: center; padding: 80px 0; background-color: var(--background); position: relative; overflow: hidden;">
+            <div
+                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40rem; color: rgba(212, 175, 55, 0.03); font-family: var(--font-heading); z-index: 0; pointer-events: none; white-space: nowrap;">
+                LA MAISON</div>
+            <div class="container" style="position: relative; z-index: 1;">
+                <span
+                        style="color: var(--primary); font-weight: 700; letter-spacing: 12px; display: block; margin-bottom: 3rem; font-size: 0.9rem; text-transform: uppercase;">THE
+                    EXHIBITION</span>
+                <h2 class="premium-font h1-heading" style="line-height: 1; margin-bottom: 3rem;">Art That
+                    <br>Dissolves
+                </h2>
+                <p
+                    style="margin-bottom: 5rem; max-width: 650px; margin-inline: auto; font-size: 1.3rem; color: var(--text-muted); line-height: 2; font-weight: 300;">
+                    We do not just create cakes; we curate moments of temporary perfection. Our gallery is open for
+                    those who seek the extraordinary in every single crumb. Join us for a journey beyond the ordinary.
+                </p>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 3rem;">
+                    <div style="display: flex; gap: 3rem;">
+                        <div style="text-align: center;">
+                            <h4 class="premium-font"
+                                style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;">24</h4>
+                            <p style="letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase;">ATELIERS
+                                WORLDWIDE</p>
+                        </div>
+                        <div style="width: 1px; height: 60px; background: rgba(212, 175, 55, 0.2);"></div>
+                        <div style="text-align: center;">
+                            <h4 class="premium-font"
+                                style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;">1924</h4>
+                            <p style="letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase;">ESTABLISHED
+                                TRADITION</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="primary-btn"
+                            style="padding: 1.5rem 5rem; font-size: 1rem; letter-spacing: 3px;">BEGIN YOUR
+                            COMMISSION</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Standardized Home 1 Layout) -->
+    <footer style="background: #1A1A1A; color: #FFFFFF; padding: 100px 0 40px; margin-top: 0;">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Logo & Info -->
+                <div class="footer-info">
+                    <div class="footer-logo"><img src="assets/images/logo.png" alt="Logo"></div>
+                    <p class="footer-desc">
+                        Defining the pinnacle of luxury bakery through artistry, passion, and the world's finest
+                        ingredients. Every creation tells a story of elegance.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Explore Section -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Explore</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Signature
+                                Collection</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Bespoke
+                                Creations</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Gifting &
+                                Favors</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Seasonal
+                                Editions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Section -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Company</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li><a href="about.html"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">The
+                                Maison Story</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Our
+                                Ateliers</a></li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Careers</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Sustainability</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Address -->
+                <div>
+                    <h4 class="premium-font"
+                        style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
+                        Contact</h4>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 2; font-weight: 300;">
+                        <p style="margin-bottom: 1rem;"><i class="bi bi-geo-alt"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> 123 Luxury Avenue, Manhattan,
+                            <br>New York City 10001
+                        </p>
+                        <p style="margin-bottom: 1rem;"><i class="bi bi-telephone"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> +1 (212) 555-0198</p>
+                        <p><i class="bi bi-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            concierge@lamaison.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 40px;">
+                <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">&copy; <span
+                        id="year"></span> La Maison Bakery. Designed with Passion.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#" style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">Privacy
+                        Policy</a>
+                    <a href="#" style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay (Strictly Mobile - Mirrored from Index) -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-close" id="menu-close"><i class="bi bi-x-lg"></i></div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-item">
+                <a style="cursor: default;">Home <i class="bi bi-chevron-down" style="font-size: 0.8rem;"></i></a>
+                <div class="mobile-sublinks">
+                    <a href="index.html">- Home 1</a>
+                    <a href="home2.html" class="active">- Home 2</a>
+                </div>
+            </div>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-nav-item">
+                <a style="cursor: default;">Dashboard <i class="bi bi-chevron-down" style="font-size: 0.8rem;"></i></a>
+                <div class="mobile-sublinks">
+                    <a href="dashboard.html">- User Dashboard</a>
+                    <a href="admin-dashboard.html">- Admin Dashboard</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-secondary-btns">
+            <a href="#" class="login-btn">LOGIN</a>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
