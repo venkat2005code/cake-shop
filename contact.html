@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Our Concierge | La Maison Luxury Patisserie</title>
+    <title>Contact Our Concierge | OVEN Luxury Patisserie</title>
     <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
@@ -14,7 +14,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <style>
         .contact-form-container {
             background: var(--surface);
@@ -100,7 +100,21 @@
     <header>
         <div class="container nav-wrapper">
             <div class="logo">
-                <a href="index.html"><img src="assets/images/logo.png" alt="La Maison Logo"></a>
+                <a href="index.html">
+                    <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" class="oven-logo-svg">
+                        <defs>
+                            <linearGradient id="premiumGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#F2D06B;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#premiumGold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#premiumGold)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <circle cx="35" cy="45" r="14" stroke="url(#premiumGold)" stroke-width="1" fill="none" opacity="0.4"/>
+                        <text x="75" y="48" fill="var(--text)" font-family="'Playfair Display', serif" font-size="32" font-weight="700" letter-spacing="8">OVEN</text>
+                    </svg>
+                </a>
             </div>
             <nav class="nav-center">
                 <div class="nav-item">
@@ -138,8 +152,8 @@
             <div style="position: absolute; inset:0; background: var(--background); opacity: 0.6;"></div>
             <div class="container" style="position: relative; z-index: 2; text-align: center;">
                 <span style="color: var(--primary); font-weight: 700; letter-spacing: 12px; text-transform: uppercase; display: block; margin-bottom: 2rem;"></span>
-                <h1 class="premium-font h1-heading" style="line-height: 1.1; margin-bottom: 3rem;">A World Of <br>Infinite Possibility</h1>
-                <p style="margin: 0 auto 4rem; max-width: 700px; color: var(--text-muted); font-size: 1.25rem;">From global wedding commissions to private residential residencies, our concierge provides direct access to the world's most elite patisserie team.</p>
+                <h1 class="text-hero font-heading font-bold leading-tight" style="margin-bottom: 3rem;">Commission Your <br>Specialty Piece</h1>
+                <p class="text-xl leading-relaxed text-muted" style="margin: 0 auto 4rem; max-width: 700px;">From global wedding commissions to private residencies, our concierge provides direct access to the world's most elite specialty cake and artisanal bakery team.</p>
                 <div style="display: flex; justify-content: center; gap: 2.5rem;">
                     <a href="#commission" class="primary-btn" style="padding: 1.5rem 4rem;">Open Commission Brief</a>
                     <a href="#ateliers" class="secondary-btn" style="padding: 1.5rem 4rem;">Visit An Atelier</a>
@@ -150,8 +164,8 @@
         <!-- 2. The Booking Journey (Steps) -->
         <section id="journey" class="reveal" style="padding: 15rem 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
             <div class="container section-title">
-                <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px;">THE PROCESS</span>
-                <h2 class="premium-font h1-heading" style="margin-top: 1.5rem;">Four Stages to Perfection</h2>
+                <span class="font-bold tracking-widest uppercase" style="color: var(--primary);">THE PROCESS</span>
+                <h2 class="text-5xl font-heading font-bold leading-tight" style="margin-top: 1.5rem;">Four Stages to Perfection</h2>
             </div>
             <div class="container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
                 <!-- Step 01 -->
@@ -167,8 +181,8 @@
                     style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
                     <span
                         style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">02</span>
-                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Tasting</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">A private sensory immersion in our flagship atelier room.</p>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Firing</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">A private sensory immersion in our flagship hearth room to select your flavor profile.</p>
                 </div>
                 <!-- Step 03 -->
                 <div class="process-step-card"
@@ -194,7 +208,7 @@
             <div class="container grid-2col commission-grid" style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 10rem;">
                 <!-- Left: Touchpoints -->
                 <div id="ateliers">
-                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin-bottom: 5rem;">Global <br>Touchpoints</h2>
+                    <h2 class="text-5xl font-heading font-bold leading-tight" style="margin-bottom: 5rem;">Global <br>Touchpoints</h2>
                     <div class="grid-2col touchpoint-grid" style="display: grid; gap: 4rem;">
                         <div class="touchpoint-item">
                             <h5 style="font-weight: 700; color: var(--primary); letter-spacing: 3px; margin-bottom: 1.5rem; font-size: 0.9rem;">NEW YORK</h5>
@@ -214,7 +228,7 @@
                 <!-- Right: Form -->
                 <div>
                     <!-- Aligning title with left column -->
-                    <h2 class="premium-font h1-heading" style="margin-bottom: 2rem; line-height: 1.1;">Find Us In
+                    <h2 class="text-5xl font-heading font-bold leading-tight" style="margin-bottom: 2rem;">Find Us In
                         <br>Manhattan</h2>
                     <div class="contact-form-container" style="padding: 4rem; margin-top: 0;">
                         <form>
@@ -255,7 +269,7 @@
                 <p style="color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 4rem;">For all publication inquiries, high-resolution asset requests, and interview coordination with our Master Patissiers.</p>
                 <div style="display: flex; justify-content: center; gap: 3rem;">
                     <a href="#" style="font-weight: 700; color: var(--primary); text-decoration: underline; text-underline-offset: 8px;">Download Press Kit</a>
-                    <a href="mailto:press@lamaison.com" style="font-weight: 700; color: var(--primary); text-decoration: underline; text-underline-offset: 8px;">Email Media Desk</a>
+                    <a href="mailto:press@ovenbakery.com" style="font-weight: 700; color: var(--primary); text-decoration: underline; text-underline-offset: 8px;">Email Media Desk</a>
                 </div>
             </div>
         </section>
@@ -305,10 +319,25 @@
             <div class="footer-grid">
                 <!-- Logo & Info -->
                 <div class="footer-info">
-                    <div class="footer-logo"><img src="assets/images/logo.png" alt="Logo"></div>
-                    <p class="footer-desc">
-                        Defining the pinnacle of luxury bakery through artistry, passion, and the world's finest
-                        ingredients. Every creation tells a story of elegance.</p>
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" style="height: 40px; width: auto;">
+                                <defs>
+                                    <linearGradient id="footerGoldContact" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#F2D06B;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#footerGoldContact)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                                <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#footerGoldContact)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                                <circle cx="35" cy="45" r="14" stroke="url(#footerGoldContact)" stroke-width="1" fill="none" opacity="0.4"/>
+                                <text x="75" y="48" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="32" font-weight="700" letter-spacing="8">OVEN</text>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="footer-desc text-white-muted">
+                        Defining the pinnacle of luxury bakery through artistry, passion, and the world's finest ingredients. Every creation tells a story of elegance.</p>
                     <div class="footer-socials">
                         <a href="#"><i class="bi bi-instagram"></i></a>
                         <a href="#"><i class="bi bi-facebook"></i></a>
@@ -346,7 +375,7 @@
                     <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
                         <li><a href="about.html"
                                 style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">The
-                                Maison Story</a></li>
+                                OVEN Story</a></li>
                         <li><a href="#"
                                 style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Our
                                 Ateliers</a></li>
@@ -364,7 +393,7 @@
                     <h4 class="premium-font"
                         style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
                         Contact</h4>
-                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 2; font-weight: 300;">
+                    <div class="text-white" style="font-size: 0.9rem; line-height: 2; font-weight: 300;">
                         <p style="margin-bottom: 1rem;"><i class="bi bi-geo-alt"
                                 style="color: var(--primary); margin-right: 0.5rem;"></i> 123 Luxury Avenue, Manhattan,
                             <br>New York City 10001
@@ -372,7 +401,7 @@
                         <p style="margin-bottom: 1rem;"><i class="bi bi-telephone"
                                 style="color: var(--primary); margin-right: 0.5rem;"></i> +1 (212) 555-0198</p>
                         <p><i class="bi bi-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
-                            concierge@lamaison.com</p>
+                            concierge@ovenbakery.com</p>
                     </div>
                 </div>
             </div>
@@ -380,7 +409,7 @@
             <!-- Bottom Bar -->
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 40px;">
                 <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">&copy; <span
-                        id="year"></span> La Maison Bakery. Designed with Passion.</p>
+                        id="year"></span> OVEN. Designed with Passion.</p>
                 <div style="display: flex; gap: 2rem;">
                     <a href="#" style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); font-weight: 300;">Privacy
                         Policy</a>

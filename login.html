@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | La Maison Luxury Atelier</title>
+    <title>Login | OVEN Luxury Atelier</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <!-- Icons -->
@@ -12,64 +12,67 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <style>
-        /* Auth Page Specialized Architecture */
+        body {
+            overflow: hidden; /* Point 5: Single viewport */
+        }
+
         .auth-wrapper {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--background);
-            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/bakery-interior.png') center/cover no-repeat;
             padding: 2rem;
-            overflow: hidden;
         }
 
         .auth-container {
             width: 100%;
-            max-width: 450px;
+            max-width: 480px;
             background: var(--surface);
-            padding: 3.5rem;
+            padding: 3rem;
             border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             text-align: center;
-            z-index: 10;
+            position: relative;
         }
 
         .auth-logo {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center; /* Point 7: Centered logo */
         }
 
         .auth-logo img {
-            height: 60px;
-            width: auto;
+            height: 70px;
+            cursor: pointer;
         }
 
         .auth-header h1 {
             font-size: 2.2rem;
             margin-bottom: 0.5rem;
             color: var(--text);
+            font-family: var(--font-heading);
         }
 
         .auth-header p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-group {
             text-align: left;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .form-group label {
             display: block;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             color: var(--text);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -77,40 +80,28 @@
 
         .form-control {
             width: 100%;
-            padding: 1rem 1.2rem;
+            padding: 0.9rem 1.2rem;
             background: var(--background);
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 12px;
-            font-family: 'Outfit', sans-serif;
             color: var(--text);
             transition: all 0.3s ease;
         }
 
-        [data-theme="dark"] .form-control {
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.05);
-        }
-
         .auth-btn {
             width: 100%;
-            padding: 1.1rem;
+            padding: 1rem;
             background: var(--primary);
             color: #000;
             border: none;
             border-radius: 12px;
-            font-family: 'Outfit', sans-serif;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-top: 0.5rem;
         }
 
         .auth-btn:hover {
@@ -119,8 +110,59 @@
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
         }
 
+        /* Social Logins (Point 14) */
+        .social-logins {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn.google:hover { background: #f1f1f1; border-color: #4285F4; color: #4285F4; }
+        .social-btn.facebook:hover { background: #f1f1f1; border-color: #1877F2; color: #1877F2; }
+
+        .auth-divider {
+            margin: 1.5rem 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .auth-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-divider span {
+            position: relative;
+            background: var(--surface);
+            padding: 0 1rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
         .auth-footer {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             font-size: 0.9rem;
             color: var(--text-muted);
         }
@@ -128,13 +170,11 @@
         .auth-footer a {
             color: var(--primary);
             font-weight: 600;
-            text-decoration: none;
-            margin-left: 0.5rem;
         }
 
-        /* Top Corner Controls - Precision Placement */
+        /* Controls */
         .top-controls {
-            position: fixed;
+            position: absolute;
             top: 30px;
             right: 40px;
             display: flex;
@@ -143,8 +183,9 @@
         }
 
         .control-btn {
-            background: var(--surface);
-            color: var(--text);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -152,10 +193,9 @@
             align-items: center;
             justify-content: center;
             font-size: 1.1rem;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .control-btn:hover {
@@ -164,46 +204,9 @@
             border-color: var(--primary);
         }
 
-        .back-home {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            color: var(--text-muted);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-
-        .back-home:hover {
-            color: var(--primary);
-        }
-
-        /* RTL Adjustments */
-        [dir="rtl"] .top-controls {
-            right: auto;
-            left: 40px;
-        }
-
         @media (max-width: 600px) {
             .auth-container {
-                padding: 2.5rem 1.5rem !important;
-                border-radius: 20px;
-            }
-            .auth-logo img {
-                height: 45px !important;
-            }
-            .auth-header h1 {
-                font-size: 1.8rem;
-            }
-            .top-controls {
-                top: 20px;
-                right: 20px;
+                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -211,36 +214,59 @@
 
 <body data-theme="light">
 
-    <!-- Top Corner Controls -->
-    <div class="top-controls">
-        <button class="control-btn" id="dir-toggle-auth" title="Toggle RTL/LTR"><i class="bi bi-globe"></i></button>
-        <button class="control-btn" id="theme-toggle-auth" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-    </div>
-
     <div class="auth-wrapper">
+        <!-- Top Corner Controls -->
+        <div class="top-controls">
+            <button class="control-btn" id="dir-toggle-auth" title="Toggle RTL/LTR"><i class="bi bi-globe"></i></button>
+            <button class="control-btn" id="theme-toggle-auth" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        </div>
+
         <div class="auth-container">
             <div class="auth-logo">
-                <a href="index.html"><img src="assets/images/logo.png" alt="La Maison Logo"></a>
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; justify-content: center;">
+                    <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" style="height: 60px; width: auto;">
+                        <defs>
+                            <linearGradient id="premiumGoldAuth" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#F2D06B;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#premiumGoldAuth)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#premiumGoldAuth)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <circle cx="35" cy="45" r="14" stroke="url(#premiumGoldAuth)" stroke-width="1" fill="none" opacity="0.4"/>
+                        <text x="75" y="48" fill="var(--text)" font-family="'Playfair Display', serif" font-size="32" font-weight="700" letter-spacing="8">OVEN</text>
+                    </svg>
+                </a>
             </div>
             <div class="auth-header">
                 <h1>Welcome Back</h1>
-                <p>Sign in to your luxury atelier account</p>
+                <p>Sign in to your OVEN Specialty account</p>
             </div>
             
             <form action="dashboard.html">
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" class="form-control" placeholder="monsieur@lamaison.com" required>
+                    <input type="email" class="form-control" placeholder="monsieur@ovenbakery.com" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" class="form-control" placeholder="••••••••" required>
                 </div>
-                <div style="text-align: right; margin-bottom: 1.5rem;">
+                <div style="text-align: right; margin-bottom: 1rem;">
                     <a href="#" style="color: var(--primary); font-size: 0.85rem; font-weight: 500;">Forgot Password?</a>
                 </div>
                 <button type="submit" class="auth-btn">Sign In</button>
             </form>
+
+            <div class="auth-divider">
+                <span>Or login with</span>
+            </div>
+
+            <div class="social-logins">
+                <button class="social-btn google"><i class="bi bi-google"></i> Google</button>
+                <button class="social-btn facebook"><i class="bi bi-facebook"></i> Facebook</button>
+            </div>
 
             <div class="auth-footer">
                 Don't have an account? <a href="register.html">Register Now</a>
@@ -249,7 +275,6 @@
     </div>
 
     <script>
-        // Precision Controls Logic
         document.getElementById('theme-toggle-auth').addEventListener('click', () => {
             const body = document.body;
             const currentTheme = body.getAttribute('data-theme');
