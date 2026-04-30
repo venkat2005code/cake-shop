@@ -193,27 +193,21 @@
         <!-- 6. Global Private Fleet -->
         <section id="fleet" class="reveal" style="padding: 120px 0;">
             <div class="container"
-                style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 8rem; align-items: center;">
-                <div>
-                    <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px;">IMMUTABLE
-                        PERFECTION</span>
-                    <h2 class="premium-font h1-heading" style="margin: 2rem 0;">White-Glove <br>Global Transport
-                    </h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 3rem;">
+                style="max-width: 900px; text-align: center;">
+                <div style="margin-bottom: 5rem;">
+                    <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px; display: block; margin-bottom: 1rem;">IMMUTABLE PERFECTION</span>
+                    <h2 class="premium-font h1-heading" style="margin: 2rem 0;">White-Glove <br>Global Transport</h2>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                         Temperature-controlled, shock-stabilized, and tracked via live telemetry. Our private fleet
                         ensures your creation arrives in the exact condition it was witnessed in the atelier.</p>
-                    <div style="display: flex; gap: 2rem; align-items: center;">
-                        <i class="bi bi-airplane" style="font-size: 3rem; color: var(--primary);"></i>
+                    
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                        <i class="bi bi-airplane" style="font-size: 4rem; color: var(--primary);"></i>
                         <div>
-                            <h4 class="premium-font" style="font-size: 1.3rem;">Next Day Overseas</h4>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Specialized air freight for grand
-                                overseas events.</p>
+                            <h4 class="premium-font" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Next Day Overseas</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-muted);">Specialized air freight for grand overseas events.</p>
                         </div>
                     </div>
-                </div>
-                <div style="border-radius: 100px 100px 0 0; overflow: hidden; height: 600px;">
-                    <img src="assets/images/bakery-interior.png"
-                        style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(1);">
                 </div>
             </div>
         </section>
@@ -270,21 +264,18 @@
         <section id="app-service" class="reveal"
             style="background: #000; color: white; padding: 100px 0; border-radius: 60px; margin: 0 5%; width: 90%;">
             <div class="container"
-                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6rem; align-items: center;">
+                style="max-width: 900px; text-align: center;">
                 <div>
                     <h1 class="premium-font h1-heading text-white" style="line-height: 1.1; margin-bottom: 3rem;">A Boutique of <br>Curated Excellence</h1>
-                    <p class="text-white-muted" style="line-height: 1.8; margin-bottom: 3.5rem;">The OVEN app
+                    <p class="text-white-muted" style="line-height: 2; margin-bottom: 4.5rem; font-size: 1.15rem; max-width: 800px; margin-left: auto; margin-right: auto;">The OVEN app
                         allows you to track your bespoke creation's journey, manage your global reservations, and access
                         the "Private Bin" of daily leftovers.</p>
-                    <div style="display: flex; gap: 2rem;">
+                    <div style="display: flex; gap: 2.5rem; justify-content: center;">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                            style="height: 45px;">
+                            style="height: 55px; cursor: pointer;">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                            style="height: 45px;">
+                            style="height: 55px; cursor: pointer;">
                     </div>
-                </div>
-                <div style="text-align: center;">
-                    <i class="bi bi-phone" style="font-size: 18rem; color: var(--primary);"></i>
                 </div>
             </div>
         </section>
@@ -419,7 +410,11 @@
             </div>
         </div>
         <div class="mobile-secondary-btns">
-            <a href="#" class="login-btn">LOGIN</a>
+            <div class="mobile-preference-toggles">
+                <button class="icon-btn" id="mobile-dir-toggle" title="Toggle LTR/RTL" ><i class="bi bi-globe"></i></button>
+                <button class="icon-btn" id="mobile-theme-toggle" title="Toggle Light/Dark Theme" ><i class="bi bi-moon-stars-fill"></i></button>
+            </div>
+            <a href="login.html" class="login-btn">LOGIN</a>
         </div>
     </div>
 

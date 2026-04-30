@@ -102,7 +102,7 @@
             align-items: center;
             gap: .85rem;
             padding: .75rem 1rem;
-            color: rgba(255, 255, 255, .5);
+            color: rgba(255, 255, 255, .8);
             text-decoration: none;
             font-size: .865rem;
             border-radius: 10px;
@@ -462,25 +462,28 @@
             position: fixed;
             top: 1.25rem;
             left: 1.25rem;
-            z-index: 300;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text);
-            border: 1px solid rgba(212, 175, 55, .3);
-            width: 42px;
-            height: 42px;
+            z-index: 1100;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1.5px solid var(--primary);
+            color: #FFFFFF;
+            width: 45px;
+            height: 45px;
             border-radius: 12px;
-            cursor: pointer;
-            align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            align-items: center;
+            cursor: pointer;
             backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
-            margin: 0;
+            transition: var(--transition);
+        }
+
+        .hamburger-float i {
+            font-size: 1.5rem;
+            color: var(--text);
         }
 
         .hamburger-float:hover {
-            background: rgba(212, 175, 55, 0.2);
-            border-color: var(--primary);
+            background: var(--primary);
+            color: #000;
         }
 
         [dir=rtl] .hamburger-float {
@@ -491,6 +494,10 @@
         @media(max-width:768px) {
             .sidebar {
                 transform: translateX(-100%);
+            }
+
+            .sb-logo {
+                padding-top: 5.5rem !important;
             }
 
             .main {
@@ -614,28 +621,20 @@
 
             <div class="metrics dash-section" id="section-customers">
                 <div class="mc">
-                    <div class="mi" style="background:rgba(212,175,55,.12);color:var(--primary);"><i
-                            class="bi bi-cart-check"></i></div>
-                    <div><span class="mv">1,284 <span class="mtag up">+8%</span></span><span class="ml">Total
-                            Orders</span></div>
+                    <div class="mi" style="background:var(--primary); color:#FFFFFF;"><i class="bi bi-wallet2"></i></div>
+                    <div><span class="mv">$24,850</span><span class="ml">Total Revenue</span></div>
                 </div>
                 <div class="mc">
-                    <div class="mi" style="background:rgba(46,204,113,.1);color:#2ecc71;"><i
-                            class="bi bi-currency-dollar"></i></div>
-                    <div><span class="mv">$42,500 <span class="mtag up">+12%</span></span><span class="ml">Revenue
-                            (Apr)</span></div>
+                    <div class="mi" style="background:#2ecc71; color:#FFFFFF;"><i class="bi bi-cart-check"></i></div>
+                    <div><span class="mv">142</span><span class="ml">Total Orders</span></div>
                 </div>
                 <div class="mc">
-                    <div class="mi" style="background:rgba(52,152,219,.1);color:#3498db;"><i class="bi bi-people"></i>
-                    </div>
-                    <div><span class="mv">856 <span class="mtag up">+5%</span></span><span class="ml">Customers</span>
-                    </div>
+                    <div class="mi" style="background:#3498db; color:#FFFFFF;"><i class="bi bi-people"></i></div>
+                    <div><span class="mv">856 <span class="mtag up">+5%</span></span><span class="ml">Customers</span></div>
                 </div>
                 <div class="mc">
-                    <div class="mi" style="background:rgba(231,76,60,.1);color:#e74c3c;"><i
-                            class="bi bi-exclamation-triangle"></i></div>
-                    <div><span class="mv">3 <span class="mtag dn">Alerts</span></span><span class="ml">Pending
-                            Issues</span></div>
+                    <div class="mi" style="background:#e74c3c; color:#FFFFFF;"><i class="bi bi-exclamation-triangle"></i></div>
+                    <div><span class="mv">3 <span class="mtag dn">Alerts</span></span><span class="ml">Pending Issues</span></div>
                 </div>
             </div>
 
