@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OVEN | Home 2 - The Modern Atelier</title>
-    <!-- Google Fonts: Playfair Display & Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Custom Style -->
+    <title>OVEN | Home 2 - Elite Collection</title>
+    <!-- CSS & Fonts -->
     <link rel="stylesheet" href="style.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body data-theme="dark">
+<body data-theme="light">
 
-    <!-- Header Section -->
-    <header>
-        <div class="container nav-wrapper">
+    <!-- Header & Nav -->
+    <header id="main-header">
+        <div class="nav-wrapper">
             <div class="logo">
                 <a href="index.html">
-                    <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" class="oven-logo-svg">
+                    <svg class="oven-logo-svg" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="premiumGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="logoGold" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
                                 <stop offset="50%" style="stop-color:#F2D06B;stop-opacity:1" />
                                 <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
                             </linearGradient>
                         </defs>
-                        <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#premiumGold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                        <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#premiumGold)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                        <circle cx="35" cy="45" r="14" stroke="url(#premiumGold)" stroke-width="1" fill="none" opacity="0.4"/>
-                        <text x="75" y="48" fill="var(--text)" font-family="'Playfair Display', serif" font-size="32" font-weight="700" letter-spacing="8">OVEN</text>
+                        <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#logoGold)" stroke-width="2.5" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#logoGold)" stroke-width="1.5" fill="none"
+                            stroke-linecap="round" />
+                        <circle cx="35" cy="45" r="14" stroke="url(#logoGold)" stroke-width="1" fill="none"
+                            opacity="0.4" />
+                        <text x="75" y="48" fill="var(--text)" font-family="'Playfair Display', serif" font-size="32"
+                            font-weight="700" letter-spacing="8">OVEN</text>
                     </svg>
                 </a>
             </div>
 
             <nav class="nav-center">
                 <div class="nav-item active">
-                    <span>Home <i class="bi bi-chevron-down"></i></span>
+                    <a href="index.html">Home</a>
                     <ul class="dropdown">
                         <li><a href="index.html">Home 1</a></li>
                         <li><a href="home2.html">Home 2</a></li>
@@ -54,7 +52,7 @@
                 <div class="nav-item"><a href="services.html">Services</a></div>
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
                 <div class="nav-item">
-                    <span>Dashboard <i class="bi bi-chevron-down"></i></span>
+                    <a>Dashboard</a>
                     <ul class="dropdown">
                         <li><a href="dashboard.html">User Dashboard</a></li>
                         <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
@@ -63,239 +61,105 @@
             </nav>
 
             <div class="nav-right">
-                <button class="icon-btn" id="dir-toggle" title="Toggle LTR/RTL"><i class="bi bi-globe"></i></button>
-                <button class="icon-btn" id="theme-toggle" title="Toggle Light/Dark Theme"><i
-                        class="bi bi-moon-stars-fill"></i></button>
-                <a href="login.html" class="login-btn">LOGIN</a>
-                <div class="hamburger"><i class="bi bi-list"></i></div>
+                <button class="icon-btn" id="theme-toggle"><i class="bi bi-moon-stars"></i></button>
+                <button class="icon-btn" id="dir-toggle"><i class="bi bi-globe"></i></button>
+                <a href="#" class="login-btn">LOGIN</a>
+                <div class="hamburger" id="hamburger-btn">
+                    <i class="bi bi-list"></i>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Home 2 Main Content -->
     <main>
-        <!-- 1. Modern Split Hero -->
-        <section id="hero2" class="hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/bakery-interior.png') center/cover; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 100vh;">
-            <div class="container hero-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <div class="hero-content reveal" style="max-width: 900px; margin: 0 auto;">
-                    <span class="font-bold tracking-widest" style="color: var(--primary); margin-bottom: 2rem; display: block;">EST. 1924</span>
-                    <h1 class="text-hero font-heading font-bold leading-tight text-white">The Soul <br>Of Modern <br>Baking</h1>
-                    <p class="text-xl leading-relaxed text-white-muted" style="margin: 2rem auto 3rem; max-width: 600px;">Where the heat of the hearth meets an avant-garde vision of architectural specialty cakes.</p>
-                    <div class="hero-btns" style="justify-content: center;">
-                        <a href="#" class="primary-btn" style="padding: 1.2rem 4rem;">Enter The Atelier</a>
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero-split" style="display: flex; min-height: 100vh; background: var(--background);">
+            <div class="hero-text" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 8%;">
+                <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase;">A TRADITION OF EXCELLENCE</span>
+                <h1 class="premium-font text-hero" style="margin: 2rem 0; line-height: 1;">Architecting <br>the <span style="color: var(--primary);">Supreme</span> <br>Crumb</h1>
+                <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 3.5rem; line-height: 1.8;">
+                    We treat every commission as a structural masterpiece. From global wedding drops to private atelier tastings, we define the next generation of luxury patisserie.
+                </p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#" class="primary-btn" style="padding: 1.5rem 4rem;">VIEW COLLECTION</a>
+                    <a href="#" class="secondary-btn" style="padding: 1.5rem 4rem;">OUR ATELIERS</a>
+                </div>
+            </div>
+            <div class="hero-media" style="flex: 1; background: var(--surface); position: relative; overflow: hidden;">
+                <img src="assets/images/cake1.png" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 0; left: 0; background: var(--primary); padding: 3rem; border-radius: 0 40px 0 0; color: #000;">
+                    <h4 class="premium-font" style="font-size: 2.5rem; margin-bottom: 0.5rem;">1924</h4>
+                    <p style="letter-spacing: 2px; font-weight: 700; font-size: 0.8rem;">ESTABLISHED ARTISTRY</p>
                 </div>
             </div>
         </section>
 
-        <!-- 2. The Legacy of Taste -->
-        <section id="legacy" class="reveal" style="padding: 80px 0; background: var(--background);">
-            <div class="container grid-2col legacy-grid">
+        <!-- Stats Section -->
+        <section class="dark-highlight-section reveal" id="quality">
+            <div class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4rem;">
                 <div>
-                    <span class="font-bold tracking-widest uppercase text-sm"
-                        style="color: var(--primary);">OUR
-                        HERITAGE</span>
-                    <h2 class="text-4xl font-heading font-bold leading-tight" style="margin-top: 1.5rem;">A Century
-                        Of <br>Avant-Garde <br>Patisserie</h2>
+                    <h4 class="premium-font text-7xl" style="color: var(--primary);">100%</h4>
+                    <p>Organic Sourcing</p>
                 </div>
-                <div style="border-left: 1px solid rgba(212, 175, 55, 0.2); padding-left: 5rem;">
-                    <p style="font-size: 1.2rem; line-height: 2; color: var(--text-muted); margin-bottom: 2rem;">Founded
-                        in 1924, OVEN has redefined the boundaries of sugar and flour. We treat every cake as a
-                        sculptural masterpiece, blending architectural precision with the soul of French tradition.</p>
-                    <a href="#"
-                        style="color: var(--primary); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--primary); padding-bottom: 5px; letter-spacing: 2px; font-size: 0.9rem;">DISCOVER
-                        OUR ROOTS</a>
+                <div>
+                    <h4 class="premium-font text-7xl" style="color: var(--primary);">24H</h4>
+                    <p>Freshly Baked</p>
+                </div>
+                <div>
+                    <h4 class="premium-font text-7xl" style="color: var(--primary);">0%</h4>
+                    <p>Artificial Preservatives</p>
                 </div>
             </div>
         </section>
 
-        <!-- 3. The Tasting Atelier (New Wish Section) -->
-        <section id="tasting-atelier" class="reveal"
-            style="padding: 100px 0; background: var(--surface); position: relative; overflow: hidden;">
-            <div
-                style="position: absolute; top: -10%; right: -5%; font-size: 25rem; color: rgba(212, 175, 55, 0.05); font-family: var(--font-heading); pointer-events: none;">
-                TA</div>
-            <div class="container grid-main tasting-grid" style="grid-template-columns: repeat(2, 1fr); gap: 6rem; align-items: center;">
-                <div class="atelier-image" style="position: relative; display: flex; justify-content: center;">
-                    <div
-                        style="width: 100%; max-width: 450px; aspect-ratio: 1; border-radius: 50% 50% 0 50%; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.1);">
-                        <img src="assets/images/bakery-interior.png" alt="Tasting Room"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div
-                        style="position: absolute; bottom: 10%; right: 0; background: var(--background); padding: 2rem; border-radius: 20px; border: 1px solid var(--primary); box-shadow: 20px 20px 40px rgba(0,0,0,0.05); z-index: 2;">
-                        <h4 class="premium-font" style="color: var(--primary); font-size: 1.3rem;">Private Soirée</h4>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Limited to 4 Guests
-                        </p>
+        <!-- Featured Section -->
+        <section class="reveal" style="padding: 120px 0;">
+            <div class="container grid-2col" style="align-items: center; gap: 10rem;">
+                <div class="bridal-image" style="position: relative;">
+                    <img src="assets/images/cake2.png" style="width: 100%; border-radius: 40px; box-shadow: 40px 40px 0 var(--surface);">
+                    <div style="position: absolute; -top: 10%; -right: 10%; background: #111; color: white; padding: 2rem; border-radius: 20px; text-align: center;">
+                        <h5 class="premium-font" style="font-size: 1.5rem; color: var(--primary);">Limited</h5>
+                        <p style="font-size: 0.7rem; letter-spacing: 2px;">EDITION PIECES</p>
                     </div>
                 </div>
-                <div class="atelier-content">
-                    <span
-                        style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase; font-size: 0.85rem;">EXCLUSIVITY</span>
-                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin: 2rem 0; font-size: 3.5rem;">The Tasting
-                        <br>Atelier
-                    </h2>
-                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 2.5rem;">Step
-                        into our private hearth chamber where the transformation of fire is celebrated. A curated 7-course 
-                        exploration of slow-fired textures, single-origin flours, and the architectural philosophy behind 
-                        our most iconic specialty cakes.</p>
-                    <ul style="margin-bottom: 3rem; display: grid; gap: 1rem;">
-                        <li style="display: flex; align-items: center; gap: 1.5rem;"><i class="bi bi-check2-circle"
-                                style="color: var(--primary); font-size: 1.2rem;"></i> <span
-                                style="font-weight: 500;">Private Consultation with Chef Julien</span></li>
-                        <li style="display: flex; align-items: center; gap: 1.5rem;"><i class="bi bi-check2-circle"
-                                style="color: var(--primary); font-size: 1.2rem;"></i> <span
-                                style="font-weight: 500;">Limited Harvest Ingredient Samples</span></li>
-                        <li style="display: flex; align-items: center; gap: 1.5rem;"><i class="bi bi-check2-circle"
-                                style="color: var(--primary); font-size: 1.2rem;"></i> <span
-                                style="font-weight: 500;">Bespoke Flavor Profile Mapping</span></li>
-                    </ul>
-                    <a href="#" class="primary-btn">Reserve Your Chair</a>
+                <div>
+                    <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase;">THE BRIDAL COLLECTION</span>
+                    <h2 class="premium-font h1-heading" style="margin: 2rem 0; line-height: 1.1;">Sculptures <br>That Breath</h2>
+                    <p style="font-size: 1.1rem; line-height: 2; color: var(--text-muted); margin-bottom: 3.5rem;">
+                        Our bridal pieces are not just cakes; they are architectural responses to your celebration. We mirror the fine-art of your union through sugar and flour.
+                    </p>
+                    <a href="#" class="secondary-btn">DISCOVER THE LINE</a>
                 </div>
             </div>
         </section>
 
-        <!-- 4. The Atelier Menu (Modern List) -->
-        <section id="menu2" class="reveal" style="background: var(--background); padding: 80px 0;">
-            <div class="container" style="max-width: 1100px;">
-                <div style="text-align: center; margin-bottom: 6rem;">
-                    <span
-                        style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase;">TODAY'S
-                        SELECTION</span>
-                    <h2 class="premium-font" style="font-size: 3.5rem; margin-top: 1rem;">The Patisserie Menu</h2>
-                </div>
-                <div class="grid-2col menu-grid">
-                    <div>
-                        <div class="menu-item-row">
-                            <h4 class="premium-font" style="font-size: 1.6rem; color: var(--text);">Noir Truffle</h4>
-                            <span style="color: var(--primary); font-weight: 600;">$14 / SLICE</span>
-                            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
-                                70% Dark Cacao, Madagascar Vanilla</p>
-                        </div>
-                        <div class="menu-item-row">
-                            <h4 class="premium-font" style="font-size: 1.6rem; color: var(--text);">Sicilian Rain</h4>
-                            <span style="color: var(--primary); font-weight: 600;">$12 / SLICE</span>
-                            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
-                                Pressed Lemon, Mascarpone, Sea Salt</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="menu-item-row">
-                            <h4 class="premium-font" style="font-size: 1.6rem; color: var(--text);">Rose Velvet</h4>
-                            <span style="color: var(--primary); font-weight: 600;">$15 / SLICE</span>
-                            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
-                                Hibiscus Syrup, White Chocolate Ganache</p>
-                        </div>
-                        <div class="menu-item-row">
-                            <h4 class="premium-font" style="font-size: 1.6rem; color: var(--text);">Golden Opera</h4>
-                            <span style="color: var(--primary); font-weight: 600;">$16 / SLICE</span>
-                            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
-                                Coffee Soak, 24K Gold Dust, Almond</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Midnight Collection (Enhanced Split) -->
-        <section id="midnight" class="reveal" style="padding: 100px 0;">
-            <div class="container grid-main" style="grid-template-columns: repeat(2, 1fr); gap: 6rem; align-items: center;">
-                <div class="midnight-img-container" style="display: flex; justify-content: center;">
-                    <div style="width: 100%; max-width: 450px; aspect-ratio: 4/5; border-radius: 400px 400px 0 0; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.15);">
-                        <img src="assets/images/cake1.png" alt="Dark Cake" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
+        <!-- Midnight Collection (Dark Variant) -->
+        <section class="reveal" style="background: #000; color: white; padding: 120px 0;">
+            <div class="container grid-2col" style="align-items: center; gap: 8rem;">
                 <div class="content-reveal">
-                    <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px;">EXCLUSIVE RELEASE</span>
-                    <h2 class="premium-font h1-heading" style="line-height: 1.1; margin: 2rem 0; font-size: 3.5rem;">The Midnight <br>Anthology</h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 2.5rem;">A daring exploration of shadows and sweetness. This private series features rare black-seed cacao and midnight blossoms, reserved for the most discerning palates.</p>
-                    <a href="#" class="primary-btn">Acquire The Private Series</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. Bespoke Bridal (Overlapping Art) -->
-        <section id="bridal" class="reveal" style="padding: 80px 0; background: var(--surface);">
-            <div class="container grid-2col" style="align-items: center;">
-                <div class="bridal-image" style="position: relative; border-radius: 300px 0 300px 0; overflow: hidden; box-shadow: 20px 20px 0 var(--primary);">
-                    <img src="assets/images/cake3.png" alt="Wedding Cake" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9);">
-                </div>
-                <div class="content-reveal" style="background: var(--background); padding: 4rem; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: -30px 30px 60px rgba(0,0,0,0.05);">
-                    <h2 class="premium-font h1-heading" style="margin-bottom: 2rem;">Couture <br>Bridal Registry</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.8;">Beyond the cake, we curate the legacy. Our bridal concierge transforms your wedding vision into an edible masterpiece of timeless grace.</p>
-                    <a href="#" style="font-weight: 700; color: var(--primary); letter-spacing: 2px;">SCHEDULE A SOIRÉE</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 8. Meet The Master (Portrait focus) -->
-        <section id="master" class="reveal" style="padding: 80px 0;">
-            <div class="container" style="text-align: center;">
-                <div
-                    style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: 0 auto 4rem; border: 1px solid var(--primary); padding: 15px; background: var(--background);">
-                    <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden;">
-                        <img src="assets/images/bakery-interior.png" alt="Chef Placeholder"
-                            style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.2);">
+                    <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px; text-transform: uppercase;">MIDNIGHT INDULGENCE</span>
+                    <h2 class="premium-font h1-heading text-white" style="line-height: 1.1; margin: 2rem 0;">The Noir <br>Patisserie Line</h2>
+                    <p class="text-white-muted" style="font-size: 1.1rem; line-height: 2; margin-bottom: 3.5rem;">
+                        A collection dedicated to the deep, intense flavors of single-origin dark chocolate, smoked vanilla, and charcoal-infused honey.
+                    </p>
+                    <div style="display: flex; gap: 2rem;">
+                        <a href="#" class="primary-btn">PRE-ORDER NOW</a>
+                        <a href="#" style="font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; text-decoration: underline; text-underline-offset: 8px;">THE FLAVOR MAP</a>
                     </div>
                 </div>
-                <span
-                    style="letter-spacing: 10px; color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">THE
-                    VISIONARY</span>
-                <h3 class="premium-font" style="font-size: 3.5rem; margin: 1.5rem 0;">Julien De La Roche</h3>
-                <p
-                    style="max-width: 700px; margin: 0 auto; font-size: 1.25rem; line-height: 1.8; color: var(--text-muted); font-style: italic;">
-                    "A cake is the final punctuation of a perfect evening. It must be silent, beautiful, and absolutely
-                    unforgettable."</p>
+                <div class="midnight-img-container" style="border: 1px solid var(--primary); padding: 20px; border-radius: 50%;">
+                    <img src="assets/images/cake3.png" style="width: 100%; border-radius: 50%; filter: grayscale(1) contrast(1.2);">
+                </div>
             </div>
         </section>
 
-        <!-- 9. Gift Experience (SVG Placeholders) -->
-        <section id="gifting" class="reveal" style="background: var(--surface); padding: 80px 0;">
+        <!-- The Exhibition Gallery -->
+        <section class="reveal" style="padding: 120px 0;">
             <div class="container section-title">
-                <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px;">THE GIFTING ATELIER</span>
-                <h2 class="premium-font" style="margin-top: 1rem;">Tokens Of Affection</h2>
+                <span style="color: var(--primary); font-weight: 700; letter-spacing: 5px;">THE EXHIBITION</span>
+                <h2 class="premium-font h1-heading" style="margin-top: 1.5rem;">A Gallery of Tastes</h2>
             </div>
-            <div class="container grid-main" style="gap: 5rem;">
-                <div class="feature-card" style="background: var(--background); padding: 5rem 3rem;">
-                    <i class="bi bi-box2-heart" style="font-size: 4rem; color: var(--primary);"></i>
-                    <h4 class="premium-font" style="margin-top: 2rem; font-size: 1.5rem;">Velvet Signature Box</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">Hand-wrapped in silk
-                        velvet with gold-embossed seals.</p>
-                </div>
-                <div class="feature-card" style="background: var(--background); padding: 5rem 3rem;">
-                    <i class="bi bi-envelope-paper" style="font-size: 4rem; color: var(--primary);"></i>
-                    <h4 class="premium-font" style="margin-top: 2rem; font-size: 1.5rem;">Calligraphy Service</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">Bespoke messages
-                        written by our in-house master calligrapher.</p>
-                </div>
-                <div class="feature-card" style="background: var(--background); padding: 5rem 3rem;">
-                    <i class="bi bi-gem" style="font-size: 4rem; color: var(--primary);"></i>
-                    <h4 class="premium-font" style="margin-top: 2rem; font-size: 1.5rem;">The Jewel Series</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">A collection of
-                        individual, edible gems for grand gestures.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. The Sourcing (Minimal Type) -->
-        <section id="sourcing" class="reveal" style="padding: 80px 0;">
-            <div class="container" style="text-align: center; max-width: 900px;">
-                <div style="width: 2px; height: 100px; background: var(--primary); margin: 0 auto 3rem;"></div>
-                <h2 class="premium-font h1-heading" style="margin-bottom: 2.5rem; line-height: 1.1;">Purity
-                    Without <br>Compromise</h2>
-                <p style="line-height: 2.2; font-size: 1.3rem; color: var(--text-muted); font-weight: 300;">We partner
-                    exclusively with family-owned farms. From the organic cultured butter of lower Normandy to the rare
-                    hand-harvested sea salt of Guerande, our ingredient ledger is a map of the world's finest biological
-                    treasures.</p>
-            </div>
-        </section>
-
-        <!-- 11. Milestone Gallery (Clean Mosaic) -->
-        <section id="mosaic" class="reveal" style="padding: 0;">
-            <div class="cake-gallery">
-                <div style="position: relative; overflow: hidden; height: 500px;" class="gallery-item">
-                    <img src="assets/images/cake1.png" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
+            <div class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
                 <div style="position: relative; overflow: hidden; height: 500px;" class="gallery-item">
                     <img src="assets/images/cake2.png" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
@@ -433,7 +297,6 @@
         </section>
     </main>
 
-    <!-- Footer (Standardized Home 1 Layout) -->
     <footer style="background: #1A1A1A; color: #FFFFFF; padding: 100px 0 40px; margin-top: 0;">
         <div class="container">
             <div class="footer-grid">
@@ -472,18 +335,10 @@
                         style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
                         Explore</h4>
                     <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
-                        <li><a href="#"
-                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Signature
-                                Collection</a></li>
-                        <li><a href="#"
-                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Bespoke
-                                Creations</a></li>
-                        <li><a href="#"
-                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Gifting &
-                                Favors</a></li>
-                        <li><a href="#"
-                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Seasonal
-                                Editions</a></li>
+                        <li><a href="services.html#weddings">Signature Collection</a></li>
+                        <li><a href="services.html#celebrations">Bespoke Creations</a></li>
+                        <li><a href="services.html#corporate">Gifting & Favors</a></li>
+                        <li><a href="services.html#subscription">Seasonal Editions</a></li>
                     </ul>
                 </div>
 
@@ -493,18 +348,10 @@
                         style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
                         Company</h4>
                     <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
-                        <li><a href="about.html"
-                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">The
-                                OVEN Story</a></li>
-                        <li><a href="#"
-                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Our
-                                Ateliers</a></li>
-                        <li><a href="#"
-                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Careers</a>
-                        </li>
-                        <li><a href="#"
-                                style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 300;">Sustainability</a>
-                        </li>
+                        <li><a href="about.html">The OVEN Story</a></li>
+                        <li><a href="services.html#atelier">Our Ateliers</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="#">Sustainability</a></li>
                     </ul>
                 </div>
 
@@ -513,7 +360,7 @@
                     <h4 class="premium-font"
                         style="color: var(--primary); font-size: 1.4rem; margin-bottom: 2.5rem; letter-spacing: 1px;">
                         Contact</h4>
-                    <div class="text-white" style="font-size: 0.9rem; line-height: 2; font-weight: 300;">
+                    <div class="text-white" style="font-size: 1.1rem; line-height: 2; font-weight: 400;">
                         <p style="margin-bottom: 1rem;"><i class="bi bi-geo-alt"
                                 style="color: var(--primary); margin-right: 0.5rem;"></i> 123 Luxury Avenue, Manhattan,
                             <br>New York City 10001

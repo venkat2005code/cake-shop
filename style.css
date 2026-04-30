@@ -31,6 +31,10 @@
     /* 36px */
     --text-5xl: 3rem;
     /* 48px */
+    --text-6xl: 4.5rem;
+    /* 72px */
+    --text-7xl: 6rem;
+    /* 96px */
     --text-hero: 5rem;
     /* 80px */
 
@@ -112,7 +116,7 @@ h4,
 }
 
 .text-white-muted {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* Typography Utility Classes */
@@ -150,6 +154,14 @@ h4,
 
 .text-5xl {
     font-size: var(--text-5xl);
+}
+
+.text-6xl {
+    font-size: var(--text-6xl);
+}
+
+.text-7xl {
+    font-size: var(--text-7xl);
 }
 
 .text-hero {
@@ -676,6 +688,21 @@ section {
 .dark-highlight-section {
     background: #111111;
     color: #FFFFFF;
+    padding: 100px 0;
+}
+
+#quality h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+#quality p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
 }
 
 [data-theme="dark"] .testimonial-card {
@@ -755,7 +782,18 @@ section {
     position: relative;
     z-index: 1;
     padding: 0 1rem;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+}
+
+.parallax-content h2,
+.parallax-content p,
+.hero-content h1,
+.hero-content p {
+    color: #FFFFFF !important;
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Animations Logic */
@@ -772,10 +810,38 @@ section {
 
 /* Footer */
 footer {
-    background: var(--surface);
     padding: 80px 0 30px;
     border-top: 1px solid rgba(212, 175, 55, 0.1);
 }
+
+.footer-grid h4 {
+    font-weight: 700;
+    color: var(--primary) !important;
+}
+
+.footer-grid ul li a {
+    font-size: 1.05rem !important;
+    font-weight: 400 !important;
+}
+
+.footer-grid ul li a:hover {
+    color: var(--primary) !important;
+}
+
+/* Ensure all footer text remains visible regardless of theme */
+footer p,
+footer a,
+footer span,
+footer li,
+footer .text-white-muted {
+    color: #FFFFFF !important;
+}
+
+footer .text-white-muted {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+
 
 .footer-grid {
     display: grid;
@@ -1102,6 +1168,14 @@ footer a:hover {
     .h1-heading {
         font-size: 2.8rem !important;
         line-height: 1.1 !important;
+    }
+
+    .text-6xl {
+        font-size: 3rem !important;
+    }
+
+    .text-7xl {
+        font-size: 3.5rem !important;
     }
 
     .section-title h2 {
