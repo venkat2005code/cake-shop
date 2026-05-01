@@ -61,11 +61,19 @@
             display: none;                  /* Chrome, Safari, Opera */
         }
 
-        [dir=rtl] .sidebar {
+        [dir="rtl"] .sidebar {
             left: auto;
             right: 0;
             border-right: none;
             border-left: 1px solid rgba(212, 175, 55, .15);
+        }
+
+        .sb-logo {
+            direction: ltr !important;
+        }
+
+        .sb-logo svg {
+            direction: ltr !important;
         }
 
         .sb-logo {
@@ -97,6 +105,11 @@
             font-size: .875rem;
             border-radius: 10px;
             transition: .25s;
+        }
+
+        /* RTL Adjustments */
+        [dir="rtl"] .sb-link {
+            flex-direction: row-reverse;
         }
 
         .sb-link i {
@@ -683,7 +696,7 @@
             <!-- Welcome Banner -->
             <div class="welcome-banner dash-section" id="section-overview">
                 <div class="welcome-text">
-                    <h2>Welcome back, Julien! 👋</h2>
+                    <h2>Welcome back, Julien</h2>
                     <p>Here's what's happening with your OVEN account today.</p>
                 </div>
                 <div class="welcome-icon"><i class="bi bi-fire"></i></div>

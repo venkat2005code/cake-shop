@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const themeToggle = document.getElementById('theme-toggle');
     const dirToggle = document.getElementById('dir-toggle');
+    const mobTheme = document.getElementById('mobile-theme-toggle');
+    const mobDir = document.getElementById('mobile-dir-toggle');
 
     // 1. Mobile Menu Toggle - DELEGATED PRIORITY (Safe Access)
     document.addEventListener('click', (e) => {
@@ -50,11 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const theme = body.getAttribute('data-theme');
             if (theme === 'dark') {
                 body.removeAttribute('data-theme');
-                themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+                themeToggle.textContent = 'LIGHT';
+                if (mobTheme) mobTheme.textContent = 'LIGHT';
                 localStorage.setItem('theme', 'light');
             } else {
                 body.setAttribute('data-theme', 'dark');
-                themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+                themeToggle.textContent = 'DARK';
+                if (mobTheme) mobTheme.textContent = 'DARK';
                 localStorage.setItem('theme', 'dark');
             }
         });
@@ -63,8 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.setAttribute('data-theme', 'dark');
-        if (themeToggle) themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+        if (themeToggle) themeToggle.textContent = 'DARK';
     }
+    if (mobTheme) mobTheme.textContent = (savedTheme === 'dark') ? 'DARK' : 'LIGHT';
 
     // RTL/LTR Toggle (Safe Access)
     if (dirToggle) {
@@ -72,9 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const dir = html.getAttribute('dir');
             if (dir === 'rtl') {
                 html.setAttribute('dir', 'ltr');
+                dirToggle.textContent = 'LTR';
+                if (mobDir) mobDir.textContent = 'LTR';
                 localStorage.setItem('dir', 'ltr');
             } else {
                 html.setAttribute('dir', 'rtl');
+                dirToggle.textContent = 'RTL';
+                if (mobDir) mobDir.textContent = 'RTL';
                 localStorage.setItem('dir', 'rtl');
             }
         });
@@ -83,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedDir = localStorage.getItem('dir');
     if (savedDir) {
         html.setAttribute('dir', savedDir);
+        if (dirToggle) dirToggle.textContent = savedDir.toUpperCase();
+        if (mobDir) mobDir.textContent = savedDir.toUpperCase();
     }
 
     // Scroll Reveal Animation (Intersection Observer)
@@ -135,9 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (year) year.textContent = new Date().getFullYear();
 
     // Connect Mobile Secondary Toggles
-    const mobTheme = document.getElementById('mobile-theme-toggle');
-    const mobDir = document.getElementById('mobile-dir-toggle');
-
     if (mobTheme && themeToggle) mobTheme.addEventListener('click', () => themeToggle.click());
     if (mobDir && dirToggle) mobDir.addEventListener('click', () => dirToggle.click());
 

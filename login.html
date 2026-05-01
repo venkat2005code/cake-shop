@@ -43,11 +43,18 @@
             margin-bottom: 2rem;
             display: flex;
             justify-content: center; /* Point 7: Centered logo */
+            direction: ltr !important;
+            flex-shrink: 0;
+            min-width: fit-content;
         }
 
         .auth-logo img {
             height: 70px;
             cursor: pointer;
+        }
+
+        .auth-logo svg {
+            direction: ltr !important;
         }
 
         .auth-header h1 {
@@ -182,20 +189,29 @@
             z-index: 100;
         }
 
+        [dir="rtl"] .top-controls {
+            right: auto;
+            left: 40px;
+        }
+
         .control-btn {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             color: white;
-            width: 45px;
+            min-width: 45px;
             height: 45px;
-            border-radius: 50%;
+            padding: 0 1rem;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.2);
             cursor: pointer;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .control-btn:hover {
@@ -217,8 +233,8 @@
     <div class="auth-wrapper">
         <!-- Top Corner Controls -->
         <div class="top-controls">
-            <button class="control-btn" id="dir-toggle-auth" title="Toggle RTL/LTR"><i class="bi bi-globe"></i></button>
-            <button class="control-btn" id="theme-toggle-auth" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+            <button class="control-btn" id="dir-toggle-auth" title="Toggle RTL/LTR">LTR</button>
+            <button class="control-btn" id="theme-toggle-auth" title="Toggle Light/Dark Theme">LIGHT</button>
         </div>
 
         <div class="auth-container">
@@ -275,18 +291,55 @@
     </div>
 
     <script>
-        document.getElementById('theme-toggle-auth').addEventListener('click', () => {
-            const body = document.body;
+        const body = document.body;
+        const html = document.documentElement;
+        const themeBtn = document.getElementById('theme-toggle-auth');
+        const dirBtn = document.getElementById('dir-toggle-auth');
+
+        // Initialize from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        const savedDir = localStorage.getItem('dir');
+
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeBtn.textContent = 'DARK';
+        } else {
+            themeBtn.textContent = 'LIGHT';
+        }
+
+        if (savedDir === 'rtl') {
+            html.setAttribute('dir', 'rtl');
+            dirBtn.textContent = 'RTL';
+        } else {
+            dirBtn.textContent = 'LTR';
+        }
+
+        // Theme Toggle
+        themeBtn.addEventListener('click', () => {
             const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            body.setAttribute('data-theme', newTheme);
-            const icon = document.querySelector('#theme-toggle-auth i');
-            icon.className = newTheme === 'light' ? 'bi bi-moon-stars-fill' : 'bi bi-sun-fill';
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeBtn.textContent = 'LIGHT';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeBtn.textContent = 'DARK';
+                localStorage.setItem('theme', 'dark');
+            }
         });
 
-        document.getElementById('dir-toggle-auth').addEventListener('click', () => {
-            const html = document.documentElement;
-            html.dir = html.dir === 'rtl' ? 'ltr' : 'rtl';
+        // Direction Toggle
+        dirBtn.addEventListener('click', () => {
+            const currentDir = html.getAttribute('dir');
+            if (currentDir === 'rtl') {
+                html.setAttribute('dir', 'ltr');
+                dirBtn.textContent = 'LTR';
+                localStorage.setItem('dir', 'ltr');
+            } else {
+                html.setAttribute('dir', 'rtl');
+                dirBtn.textContent = 'RTL';
+                localStorage.setItem('dir', 'rtl');
+            }
         });
     </script>
 </body>

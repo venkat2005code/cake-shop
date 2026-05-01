@@ -60,11 +60,19 @@
             display: none;                  /* Chrome, Safari, Opera */
         }
 
-        [dir=rtl] .sidebar {
+        [dir="rtl"] .sidebar {
             left: auto;
             right: 0;
             border-right: none;
             border-left: 1px solid rgba(212, 175, 55, .15);
+        }
+
+        .sb-logo {
+            direction: ltr !important;
+        }
+
+        .sb-logo svg {
+            direction: ltr !important;
         }
 
         .sb-logo {
@@ -108,6 +116,11 @@
             border-radius: 10px;
             transition: .2s;
             white-space: nowrap;
+        }
+
+        /* RTL Adjustments */
+        [dir=\"rtl\"] .sb-link {
+            flex-direction: row-reverse;
         }
 
         .sb-link i {
@@ -613,7 +626,7 @@
 
             <div class="welcome dash-section" id="section-overview">
                 <div>
-                    <h2>Welcome, Administrator 🎯</h2>
+                    <h2>Welcome, Administrator</h2>
                     <p>Here's your OVEN operations snapshot for today.</p>
                 </div>
                 <div class="welcome-icon"><i class="bi bi-shield-check"></i></div>

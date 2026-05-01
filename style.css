@@ -358,6 +358,17 @@ header {
     display: block;
 }
 
+.logo {
+    flex-shrink: 0;
+    min-width: fit-content;
+}
+
+[dir="rtl"] .logo {
+    order: -1;
+    flex-shrink: 0;
+    min-width: fit-content;
+}
+
 .nav-item {
     position: relative;
     padding: 0.5rem 0;
@@ -417,6 +428,16 @@ header {
     border-radius: 12px;
     padding: 1rem 0;
     border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+[dir="rtl"] .dropdown {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .dropdown li a:hover {
+    padding-left: 1.5rem;
+    padding-right: 2rem;
 }
 
 .nav-item:hover .dropdown {
@@ -506,6 +527,30 @@ header {
 .hamburger i {
     font-size: 1.5rem;
     color: var(--text);
+}
+
+.nav-right .toggle-btn {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--text);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.nav-right .toggle-btn:hover {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .hamburger:hover {
@@ -1044,6 +1089,29 @@ footer .text-white-muted {
     border-color: var(--primary);
 }
 
+.toggle-btn {
+    background: rgba(212, 175, 55, 0.1);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    color: var(--text);
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+.toggle-btn:hover {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
 .mobile-secondary-btns .login-btn {
     width: 100%;
     background: var(--primary) !important;
@@ -1155,7 +1223,8 @@ footer a:hover {
 
     .nav-center,
     .nav-right .login-btn,
-    .nav-right .icon-btn {
+    .nav-right .icon-btn,
+    .nav-right .toggle-btn {
         display: none !important;
     }
 
@@ -1454,7 +1523,15 @@ footer a:hover {
     .cake-gallery {
         grid-template-columns: 1fr !important;
     }
-}
+
+    .toggle-btn {
+        padding: 0.5rem 0.9rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    .mobile-preference-toggles {
+        gap: 0.8rem !important;
+    }
 
 @media (max-width: 480px) {
     .section-title h2 {
@@ -1474,6 +1551,16 @@ footer a:hover {
     .secondary-btn {
         padding: 0.8rem 1.5rem !important;
         font-size: 0.85rem !important;
+    }
+
+    .toggle-btn {
+        padding: 0.5rem 0.9rem !important;
+        font-size: 0.75rem !important;
+        border-radius: 8px !important;
+    }
+
+    .mobile-preference-toggles {
+        gap: 0.8rem !important;
     }
 
     .process-grid,
