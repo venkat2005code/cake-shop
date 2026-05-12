@@ -84,6 +84,21 @@
             z-index: 0;
         }
 
+        .process-number {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.8;
+        }
+
+        [data-theme="dark"] .process-number {
+            opacity: 0.5;
+        }
+
         .faq-item {
             padding: 2.5rem 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -101,7 +116,7 @@
         <div class="container nav-wrapper">
             <div class="logo">
                 <a href="index.html">
-                    <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" class="oven-logo-svg">
+                    <svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg" class="oven-logo-svg">
                         <defs>
                             <linearGradient id="premiumGold" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
@@ -109,10 +124,17 @@
                                 <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
                             </linearGradient>
                         </defs>
-                        <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#premiumGold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                        <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#premiumGold)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                        <circle cx="35" cy="45" r="14" stroke="url(#premiumGold)" stroke-width="1" fill="none" opacity="0.4"/>
-                        <text x="75" y="48" fill="var(--text)" font-family="'Playfair Display', serif" font-size="32" font-weight="700" letter-spacing="8">OVEN</text>
+                        <!-- Logomark: Stylized Bakery Item (Cloche/Cake) -->
+                        <g transform="translate(5, 5)">
+                            <path d="M10 45 C 10 20, 50 20, 50 45" stroke="url(#premiumGold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <path d="M15 45 L 45 45" stroke="url(#premiumGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M30 15 L 30 8 M 25 11 L 35 11" stroke="url(#premiumGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <circle cx="30" cy="45" r="18" stroke="url(#premiumGold)" stroke-width="1" fill="none" opacity="0.3"/>
+                            <path d="M20 38 Q 30 30, 40 38" stroke="url(#premiumGold)" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        </g>
+                        <!-- Text -->
+                        <text x="75" y="42" fill="var(--text)" font-family="'Playfair Display', serif" font-size="34" font-weight="700" letter-spacing="6">OVEN</text>
+                        <text x="75" y="55" fill="var(--primary)" font-family="'Outfit', sans-serif" font-size="9" font-weight="600" letter-spacing="3" text-transform="uppercase">Specialty Bakery</text>
                     </svg>
                 </a>
             </div>
@@ -139,7 +161,7 @@
                 <button class="toggle-btn" id="dir-toggle" title="Toggle LTR/RTL">LTR</button>
                 <button class="toggle-btn" id="theme-toggle" title="Toggle Light/Dark Theme">LIGHT</button>
                 <a href="login.html" class="login-btn">LOGIN</a>
-                <div class="hamburger"><i class="bi bi-list"></i></div>
+                <div class="hamburger" id="hamburger-btn"><i class="bi bi-list"></i></div>
             </div>
         </div>
     </header>
@@ -166,38 +188,35 @@
             <div class="container section-title" style="text-align: center;">
                 <span class="font-bold tracking-widest uppercase" style="color: var(--primary); display: block; margin-bottom: 1rem;">THE PROCESS</span>
                 <h2 class="text-5xl font-heading font-bold leading-tight" style="margin-top: 1.5rem;">Four Stages to Perfection</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 2rem auto 0; font-size: 1.1rem;">Understanding our meticulous approach to crafting your bespoke centerpiece.</p>
             </div>
             <div class="container process-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem;">
                 <!-- Step 01 -->
                 <div class="process-step-card"
-                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
-                    <span
-                        style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">01</span>
-                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Brief</h4>
+                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                    <span class="process-number">01</span>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 1rem;">The Brief</h4>
                     <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">Initial consultation to capture your event's architectural soul and vision.</p>
                 </div>
                 <!-- Step 02 -->
                 <div class="process-step-card"
-                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
-                    <span
-                        style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">02</span>
-                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Firing</h4>
+                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                    <span class="process-number">02</span>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 1rem;">The Firing</h4>
                     <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">A private sensory immersion in our flagship hearth room to select your flavor profile.</p>
                 </div>
                 <!-- Step 03 -->
                 <div class="process-step-card"
-                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
-                    <span
-                        style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">03</span>
-                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Build</h4>
+                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                    <span class="process-number">03</span>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 1rem;">The Build</h4>
                     <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">Technical construction and multi-layer hand-painted finishing.</p>
                 </div>
                 <!-- Step 04 -->
                 <div class="process-step-card"
-                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative;">
-                    <span
-                        style="position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); opacity: 0.3;">04</span>
-                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Arrival</h4>
+                    style="background: rgba(255,255,255,0.03); padding: 4rem 2rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.1); text-align: center; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                    <span class="process-number">04</span>
+                    <h4 class="premium-font" style="font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 1rem;">The Arrival</h4>
                     <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">White-glove placement by our specialized logistics team.</p>
                 </div>
             </div>
@@ -262,57 +281,6 @@
             </div>
         </section>
 
-        <!-- 4. Media & Press Relations -->
-        <section class="reveal" style="padding: 100px 0; background: #000; color: white;">
-            <div class="container" style="text-align: center;">
-                <h4 class="premium-font" style="font-size: 3.2rem; margin-bottom: 2rem;">Media & Press Kit</h4>
-                <p style="color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 4rem;">For all publication inquiries, high-resolution asset requests, and interview coordination with our Master Patissiers.</p>
-                <div style="display: flex; justify-content: center; gap: 3rem;">
-                    <a href="#" style="font-weight: 700; color: var(--primary); text-decoration: underline; text-underline-offset: 8px;">Download Press Kit</a>
-                    <a href="mailto:press@ovenbakery.com" style="font-weight: 700; color: var(--primary); text-decoration: underline; text-underline-offset: 8px;">Email Media Desk</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Careers & Master Artistry -->
-        <section class="reveal" style="padding: 120px 0;">
-            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 8rem; align-items: center;">
-                <div>
-                    <h2 class="premium-font" style="font-size: 4rem; line-height: 1.1; margin-bottom: 3rem;">Shape The <br>Future of Taste</h2>
-                    <p style="font-size: 1.15rem; line-height: 2; color: var(--text-muted); margin-bottom: 4rem;">We are always in pursuit of the next generation of master artisans. If you possess a relentless drive for perfection and a background in classical French architecture or fine arts, we invite you to inquire about our residency programs.</p>
-                    <a href="#" class="secondary-btn">View Artist Openings</a>
-                </div>
-                <div style="aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 1px solid var(--primary); padding: 15px;">
-                    <img src="assets/images/cake3.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. The Connoisseur's FAQ -->
-        <section class="reveal" style="padding: 120px 0; background: var(--surface);">
-            <div class="container section-title">
-                <h2 class="premium-font" style="font-size: 4rem;">Connoisseur's FAQ</h2>
-            </div>
-            <div class="container" style="max-width: 800px;">
-                <div class="faq-item">
-                    <h5 style="font-weight: 700; margin-bottom: 1rem;">What is the typical lead time for a Couture Wedding?</h5>
-                    <p style="color: var(--text-muted); line-height: 1.8;">We recommend initiating the Commission Brief at least 6 to 9 months in advance. For destination weddings, 12 months is preferred to ensure logistical perfection.</p>
-                </div>
-                <div class="faq-item">
-                    <h5 style="font-weight: 700; margin-bottom: 1rem;">Do you offer global shipping for bespoke cakes?</h5>
-                    <p style="color: var(--text-muted); line-height: 1.8;">Yes. We operate a private, temperature-controlled fleet for local deliveries and utilize specialized climate-controlled air freight for international commissions.</p>
-                </div>
-                <div class="faq-item">
-                    <h5 style="font-weight: 700; margin-bottom: 1rem;">Can I request a personalized flavor landscape?</h5>
-                    <p style="color: var(--text-muted); line-height: 1.8;">Absolutely. During your Private Tasting at the atelier, we work with you to map ingredients from your own history—honey from your estate, or botanical infusions found in your childhood garden.</p>
-                </div>
-                <div class="faq-item" style="border: none;">
-                    <h5 style="font-weight: 700; margin-bottom: 1rem;">Is the Private Residency available globally?</h5>
-                    <p style="color: var(--text-muted); line-height: 1.8;">The Residency program is available in North America, Europe, and Asia. For locations outside these regions, additional logistical planning is required.</p>
-                </div>
-            </div>
-        </section>
-
     </main>
     <footer style="background: #1A1A1A; color: #FFFFFF; padding: 100px 0 40px; margin-top: 0;">
         <div class="container">
@@ -321,18 +289,25 @@
                 <div class="footer-info">
                     <div class="footer-logo">
                         <a href="index.html">
-                            <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" style="height: 40px; width: auto;">
+                            <svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg" style="height: 50px; width: auto;">
                                 <defs>
-                                    <linearGradient id="footerGoldHome" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <linearGradient id="footerGold" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
                                         <stop offset="50%" style="stop-color:#F2D06B;stop-opacity:1" />
                                         <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
                                     </linearGradient>
                                 </defs>
-                                <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#footerGoldHome)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                                <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#footerGoldHome)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                                <circle cx="35" cy="45" r="14" stroke="url(#footerGoldHome)" stroke-width="1" fill="none" opacity="0.4"/>
-                                <text x="75" y="48" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="32" font-weight="700" letter-spacing="8">OVEN</text>
+                                <!-- Logomark: Stylized Bakery Item (Cloche/Cake) -->
+                                <g transform="translate(5, 5)">
+                                    <path d="M10 45 C 10 20, 50 20, 50 45" stroke="url(#footerGold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                    <path d="M15 45 L 45 45" stroke="url(#footerGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                    <path d="M30 15 L 30 8 M 25 11 L 35 11" stroke="url(#footerGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                    <circle cx="30" cy="45" r="18" stroke="url(#footerGold)" stroke-width="1" fill="none" opacity="0.3"/>
+                                    <path d="M20 38 Q 30 30, 40 38" stroke="url(#footerGold)" stroke-width="1.5" fill="none" opacity="0.6"/>
+                                </g>
+                                <!-- Text -->
+                                <text x="75" y="42" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="34" font-weight="700" letter-spacing="6">OVEN</text>
+                                <text x="75" y="55" fill="var(--primary)" font-family="'Outfit', sans-serif" font-size="9" font-weight="600" letter-spacing="3" text-transform="uppercase">Specialty Bakery</text>
                             </svg>
                         </a>
                     </div>

@@ -58,8 +58,8 @@
 }
 
 [data-theme="dark"] {
-    --background: #121212;
-    --surface: #1E1E1E;
+    --background: #000000;
+    --surface: #1A1A1A;
     --text: #F5F5F5;
     --text-muted: #AAAAAA;
 }
@@ -274,12 +274,45 @@ ul {
     list-style: none;
 }
 
+/* Utility Classes */
 .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
     width: 100%;
     box-sizing: border-box;
+}
+
+.grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.h1-heading {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-family: var(--font-heading);
+}
+
+.premium-font {
+    font-family: var(--font-heading);
+}
+
+.text-hero {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1;
 }
 
 /* Header & Nav */
@@ -353,7 +386,7 @@ header {
 }
 
 .oven-logo-svg {
-    height: 48px;
+    height: 54px; /* Slightly larger for better detail */
     width: auto;
     display: block;
 }
@@ -466,48 +499,48 @@ header {
 }
 
 .icon-btn {
-    background: none;
-    border: none;
     cursor: pointer;
     font-size: 1.1rem;
     color: var(--text);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--surface);
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     transition: var(--transition);
 }
 
 .icon-btn:hover {
-    transform: rotate(15deg);
+    transform: translateY(-2px);
     background: var(--primary);
-    color: var(--white);
+    color: #000;
+    border-color: var(--primary);
 }
 
 .login-btn {
     background: var(--primary);
     color: var(--white);
-    padding: 0.8rem 2rem;
-    /* Standardized (Point 9) */
-    border-radius: 50px;
-    font-weight: 600;
+    padding: 0 1.5rem;
+    height: 45px; /* Consistent height */
+    border-radius: 50px; /* Standardized radius */
+    font-weight: 700;
     border: 2px solid var(--primary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .login-btn:hover {
     background: transparent;
     color: var(--primary);
-    transform: translateY(-3px);
-    /* Hover effect (Point 10) */
+    transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
 }
 
@@ -518,7 +551,7 @@ header {
     height: 45px;
     background: rgba(212, 175, 55, 0.1);
     border: 1.5px solid var(--primary);
-    border-radius: 12px;
+    border-radius: 50px;
     justify-content: center;
     align-items: center;
     transition: var(--transition);
@@ -529,29 +562,7 @@ header {
     color: var(--text);
 }
 
-.nav-right .toggle-btn {
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    color: var(--text);
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
 
-.nav-right .toggle-btn:hover {
-    background: var(--primary);
-    color: #000;
-    border-color: var(--primary);
-    transform: translateY(-2px);
-}
 
 .hamburger:hover {
     background: var(--primary);
@@ -1076,7 +1087,7 @@ footer .text-white-muted {
     color: var(--text);
     width: 50px;
     height: 50px;
-    border-radius: 12px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1094,7 +1105,7 @@ footer .text-white-muted {
     border: 2px solid rgba(212, 175, 55, 0.3);
     color: var(--text);
     padding: 0.8rem 1.5rem;
-    border-radius: 12px;
+    border-radius: 50px;
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
@@ -1114,6 +1125,7 @@ footer .text-white-muted {
 
 .mobile-secondary-btns .login-btn {
     width: 100%;
+    max-width: 320px;
     background: var(--primary) !important;
     color: #000 !important;
     padding: 1.5rem !important;
@@ -1339,10 +1351,88 @@ footer a:hover {
     }
 }
 
+    /* Bento Grid */
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 400px);
+        gap: 1.5rem;
+    }
+
+    .bento-item {
+        position: relative;
+        border-radius: 30px;
+        overflow: hidden;
+        background: var(--surface);
+    }
+
+    .bento-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bento-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .bento-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .bento-tall {
+        grid-row: span 2;
+    }
+
+    .bento-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 2.5rem;
+        background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        color: white;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .bento-item:hover .bento-overlay {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .bento-overlay h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+    }
+
+    .bento-overlay p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+@media (max-width: 1100px) {
+    .bento-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    .bento-large { grid-column: span 2; }
+}
+
 @media (max-width: 768px) {
     section {
         padding: 60px 0 !important;
     }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .bento-large, .bento-tall { grid-column: span 1; grid-row: span 1; }
 
     /* Hero Split Stacking (Home 2) */
     .hero-split {

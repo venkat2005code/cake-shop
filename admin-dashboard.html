@@ -36,6 +36,7 @@
             color: var(--text);
             transition: background .3s, color .3s;
             overflow: hidden;
+            height: 100vh;
         }
 
         /* SIDEBAR — FIXED POSITION */
@@ -217,6 +218,61 @@
             justify-content: center;
         }
 
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background: var(--background);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            z-index: 10;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-right .icon-btn {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .header-right .icon-btn:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        /* Adjust dropdowns for header */
+        .sb-action-item { position: relative; display: flex; align-items: center; gap: .75rem; padding: .5rem .85rem; color: rgba(255,255,255,.65); font-size: .85rem; cursor: pointer; border-radius: 10px; transition: .2s; }
+        .sb-action-item:hover { background: rgba(212,175,55,.1); color: var(--primary); }
+        .sb-action-item i { font-size: 1.1rem; }
+        .badge-dot { width: 7px; height: 7px; background: #e74c3c; border-radius: 50%; border: 1.5px solid #0a0a0a; position: absolute; top: 5px; right: 8px; }
+        
+        .sb-dropdown { display: none; position: absolute; top: 100%; right: 0; width: 240px; background: #1a1a1a; border: 1px solid rgba(212,175,55,.15); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.3); z-index: 500; margin-top: 8px; overflow: hidden; }
+        .sb-dropdown.open { display: block; }
+        .drop-head { padding: .6rem 1rem; font-size: .7rem; font-weight: 700; color: var(--primary); text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,.05); text-align: left; }
+        .prof-info { padding: .8rem 1rem; border-bottom: 1px solid rgba(255,255,255,.05); text-align: left; }
+        .prof-info strong { display: block; font-size: .85rem; color: #fff; }
+        .prof-info span { font-size: .7rem; color: rgba(255,255,255,.5); }
+        .sb-dropdown a { display: flex; align-items: center; gap: .6rem; padding: .6rem 1rem; font-size: .75rem; color: rgba(255,255,255,.7); text-decoration: none; }
+        .sb-dropdown a:hover { background: rgba(212,175,55,.1); color: var(--primary); }
+
         .content {
             flex: 1;
             overflow-y: auto;
@@ -345,6 +401,7 @@
             border-radius: 14px;
             padding: 1.4rem;
             border: 1px solid rgba(212, 175, 55, .08);
+            min-width: 0;
         }
 
         [data-theme=dark] .card {
@@ -465,6 +522,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .g2,
             .g3 {
                 grid-template-columns: 1fr;
             }
@@ -506,6 +564,11 @@
 
         @media(max-width:768px) {
             .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100vh;
+                z-index: 1000;
                 transform: translateX(-100%);
             }
 
@@ -518,6 +581,8 @@
             }
 
             [dir=rtl] .sidebar {
+                left: auto;
+                right: 0;
                 transform: translateX(100%);
             }
 
@@ -557,6 +622,21 @@
         }
 
         @media(max-width:480px) {
+            .top-header {
+                padding: 1rem 0.5rem;
+            }
+            .header-left h3 {
+                display: none;
+            }
+            #profile-btn {
+                padding: 0.5rem !important;
+            }
+            #profile-btn i {
+                margin-right: 0 !important;
+            }
+            .profile-text {
+                display: none;
+            }
             .metrics {
                 grid-template-columns: 1fr;
             }
@@ -573,21 +653,25 @@
     <aside class="sidebar" id="sidebar">
         <div class="sb-logo">
             <a href="index.html">
-                <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="sbGoldAdmin" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#D4AF37" />
                             <stop offset="50%" style="stop-color:#F2D06B" />
                             <stop offset="100%" style="stop-color:#D4AF37" />
                         </linearGradient>
                     </defs>
-                    <path d="M15 45 C15 20,55 20,55 45" stroke="url(#gA)" stroke-width="2.5" fill="none"
-                        stroke-linecap="round" />
-                    <path d="M27 45 L43 45 M35 37 L35 53" stroke="url(#gA)" stroke-width="1.5" fill="none"
-                        stroke-linecap="round" />
-                    <circle cx="35" cy="45" r="14" stroke="url(#gA)" stroke-width="1" fill="none" opacity="0.4" />
-                    <text x="75" y="48" fill="#fff" font-family="'Playfair Display',serif" font-size="32"
-                        font-weight="700" letter-spacing="8">OVEN</text>
+                    <!-- Logomark: Stylized Bakery Item (Cloche/Cake) -->
+                    <g transform="translate(5, 5)">
+                        <path d="M10 45 C 10 20, 50 20, 50 45" stroke="url(#sbGoldAdmin)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <path d="M15 45 L 45 45" stroke="url(#sbGoldAdmin)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <path d="M30 15 L 30 8 M 25 11 L 35 11" stroke="url(#sbGoldAdmin)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <circle cx="30" cy="45" r="18" stroke="url(#sbGoldAdmin)" stroke-width="1" fill="none" opacity="0.3"/>
+                        <path d="M20 38 Q 30 30, 40 38" stroke="url(#sbGoldAdmin)" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    </g>
+                    <!-- Text -->
+                    <text x="75" y="42" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="34" font-weight="700" letter-spacing="6">OVEN</text>
+                    <text x="75" y="55" fill="var(--primary)" font-family="'Outfit', sans-serif" font-size="9" font-weight="600" letter-spacing="3" text-transform="uppercase">Specialty Bakery</text>
                 </svg>
             </a>
             <div class="sb-badge">Admin Panel</div>
@@ -608,10 +692,6 @@
                     class="bi bi-box-arrow-left" style="color:#e74c3c;"></i> Logout</a>
         </nav>
         <div class="sb-footer">
-            <div style="display:flex; gap:0.5rem; padding:0 1rem;">
-                <button id="dir-toggle-dash" title="Toggle RTL/LTR"><i class="bi bi-globe"></i></button>
-                <button id="theme-toggle-dash" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-            </div>
             <a href="mailto:concierge@ovenbakery.com"
                 style="font-size:.65rem; color:rgba(212,175,55,.6); text-decoration:none; display:block; padding:0.5rem 1rem 0;">concierge@ovenbakery.com</a>
         </div>
@@ -619,18 +699,29 @@
     </aside>
 
     <div class="main">
-        <!-- Mobile Toggle (since topbar is gone) -->
-        <button class="hamburger-float" id="hamburger"><i class="bi bi-list"></i></button>
+        <!-- TOP HEADER -->
+        <div class="top-header">
+            <div class="header-left">
+                <!-- Mobile Toggle -->
+                <button class="hamburger-float" id="hamburger" style="position: static; margin-right: 1rem;"><i class="bi bi-list"></i></button>
+                <h3 class="premium-font" style="margin:0; font-size: 1.2rem;">Admin Dashboard</h3>
+            </div>
+            <div class="header-right">
+                <button id="dir-toggle-dash" title="Toggle RTL/LTR" class="icon-btn" style="font-weight: 700; font-size: 0.7rem;">LTR</button>
+                <button id="theme-toggle-dash" title="Toggle Theme" class="icon-btn"><i class="bi bi-moon-stars-fill"></i></button>
+                
+                <div class="sb-action-item" id="profile-btn" style="padding: 0.5rem 1.2rem; background: rgba(212,175,55,.1); color: var(--primary); border-radius: 50px;">
+                    <i class="bi bi-shield-lock" style="margin-right: 0.3rem;"></i><span class="profile-text"> Admin</span>
+                    <div class="sb-dropdown" id="profile-dropdown">
+                        <div class="prof-info"><strong>Administrator</strong><span>admin@ovenbakery.com</span></div>
+                        <a href="#"><i class="bi bi-person"></i> Account</a>
+                        <a href="#"><i class="bi bi-gear"></i> System Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="content">
-
-            <div class="welcome dash-section" id="section-overview">
-                <div>
-                    <h2>Welcome, Administrator</h2>
-                    <p>Here's your OVEN operations snapshot for today.</p>
-                </div>
-                <div class="welcome-icon"><i class="bi bi-shield-check"></i></div>
-            </div>
 
             <div class="metrics dash-section" id="section-customers">
                 <div class="mc">
@@ -665,8 +756,9 @@
             <div class="g2 dash-section" id="section-orders">
                 <div class="card">
                     <div class="ct">Recent Orders <span>View All →</span></div>
-                    <table>
-                        <thead>
+                    <div style="overflow-x: auto; width: 100%;">
+                        <table style="min-width: 500px;">
+                            <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Customer</th>
@@ -712,7 +804,8 @@
                                 <td><span class="st st-d">Delivered</span></td>
                             </tr>
                         </tbody>
-                    </table>
+                        </table>
+                    </div>
                 </div>
                 <div class="card dash-section" id="section-inventory">
                     <div class="ct">Inventory Status</div>

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 
 <body data-theme="light">
@@ -18,18 +20,25 @@
         <div class="nav-wrapper">
             <div class="logo">
                 <a href="index.html">
-                    <svg class="oven-logo-svg" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg" class="oven-logo-svg">
                         <defs>
-                            <linearGradient id="logoGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="premiumGold" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
                                 <stop offset="50%" style="stop-color:#F2D06B;stop-opacity:1" />
                                 <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
                             </linearGradient>
                         </defs>
-                        <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#logoGold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                        <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#logoGold)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                        <circle cx="35" cy="45" r="14" stroke="url(#logoGold)" stroke-width="1" fill="none" opacity="0.4"/>
-                        <text x="75" y="48" fill="var(--text)" font-family="'Playfair Display', serif" font-size="32" font-weight="700" letter-spacing="8">OVEN</text>
+                        <!-- Logomark: Stylized Bakery Item (Cloche/Cake) -->
+                        <g transform="translate(5, 5)">
+                            <path d="M10 45 C 10 20, 50 20, 50 45" stroke="url(#premiumGold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <path d="M15 45 L 45 45" stroke="url(#premiumGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M30 15 L 30 8 M 25 11 L 35 11" stroke="url(#premiumGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <circle cx="30" cy="45" r="18" stroke="url(#premiumGold)" stroke-width="1" fill="none" opacity="0.3"/>
+                            <path d="M20 38 Q 30 30, 40 38" stroke="url(#premiumGold)" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        </g>
+                        <!-- Text -->
+                        <text x="75" y="42" fill="var(--text)" font-family="'Playfair Display', serif" font-size="34" font-weight="700" letter-spacing="6">OVEN</text>
+                        <text x="75" y="55" fill="var(--primary)" font-family="'Outfit', sans-serif" font-size="9" font-weight="600" letter-spacing="3" text-transform="uppercase">Specialty Bakery</text>
                     </svg>
                 </a>
             </div>
@@ -57,7 +66,7 @@
             <div class="nav-right">
                 <button class="toggle-btn" id="dir-toggle" title="Toggle LTR/RTL">LTR</button>
                 <button class="toggle-btn" id="theme-toggle" title="Toggle Light/Dark Theme">LIGHT</button>
-                <a href="#" class="login-btn">LOGIN</a>
+                <a href="login.html" class="login-btn">LOGIN</a>
                 <div class="hamburger" id="hamburger-btn">
                     <i class="bi bi-list"></i>
                 </div>
@@ -196,18 +205,25 @@
                 <div class="footer-info">
                     <div class="footer-logo">
                         <a href="index.html">
-                            <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" style="height: 40px; width: auto;">
+                            <svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg" style="height: 50px; width: auto;">
                                 <defs>
-                                    <linearGradient id="footerGoldHome" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <linearGradient id="footerGold" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
                                         <stop offset="50%" style="stop-color:#F2D06B;stop-opacity:1" />
                                         <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
                                     </linearGradient>
                                 </defs>
-                                <path d="M15 45 C 15 20, 55 20, 55 45" stroke="url(#footerGoldHome)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                                <path d="M27 45 L 43 45 M 35 37 L 35 53" stroke="url(#footerGoldHome)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                                <circle cx="35" cy="45" r="14" stroke="url(#footerGoldHome)" stroke-width="1" fill="none" opacity="0.4"/>
-                                <text x="75" y="48" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="32" font-weight="700" letter-spacing="8">OVEN</text>
+                                <!-- Logomark: Stylized Bakery Item (Cloche/Cake) -->
+                                <g transform="translate(5, 5)">
+                                    <path d="M10 45 C 10 20, 50 20, 50 45" stroke="url(#footerGold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                    <path d="M15 45 L 45 45" stroke="url(#footerGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                    <path d="M30 15 L 30 8 M 25 11 L 35 11" stroke="url(#footerGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                    <circle cx="30" cy="45" r="18" stroke="url(#footerGold)" stroke-width="1" fill="none" opacity="0.3"/>
+                                    <path d="M20 38 Q 30 30, 40 38" stroke="url(#footerGold)" stroke-width="1.5" fill="none" opacity="0.6"/>
+                                </g>
+                                <!-- Text -->
+                                <text x="75" y="42" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="34" font-weight="700" letter-spacing="6">OVEN</text>
+                                <text x="75" y="55" fill="var(--primary)" font-family="'Outfit', sans-serif" font-size="9" font-weight="600" letter-spacing="3" text-transform="uppercase">Specialty Bakery</text>
                             </svg>
                         </a>
                     </div>
