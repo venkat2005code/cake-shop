@@ -1,5 +1,5 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Gold Gradient Background -->
+  <!-- Gold Gradient -->
   <defs>
     <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
@@ -7,10 +7,18 @@
       <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <!-- Main Icon: Cloche/Cake -->
-  <path d="M12 48 C 12 24, 52 24, 52 48" stroke="url(#favGold)" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M18 48 L 46 48" stroke="url(#favGold)" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M32 18 L 32 10 M 26 14 L 38 14" stroke="url(#favGold)" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <circle cx="32" cy="48" r="22" stroke="url(#favGold)" stroke-width="1" fill="none" opacity="0.3"/>
-  <path d="M22 41 Q 32 33, 42 41" stroke="url(#favGold)" stroke-width="2" fill="none" opacity="0.6"/>
+  <!-- 3-Tier Cake Favicon -->
+  <!-- Base plate -->
+  <ellipse cx="32" cy="54" rx="26" ry="5" fill="none" stroke="url(#favGold)" stroke-width="2.5"/>
+  <!-- Bottom tier -->
+  <rect x="8" y="40" width="48" height="14" rx="3" fill="none" stroke="url(#favGold)" stroke-width="2.5"/>
+  <path d="M12 47 Q 22 42, 32 47 Q 42 42, 52 47" stroke="url(#favGold)" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <!-- Middle tier -->
+  <rect x="15" y="26" width="34" height="14" rx="3" fill="none" stroke="url(#favGold)" stroke-width="2.5"/>
+  <path d="M18 33 Q 25 28, 32 33 Q 39 28, 46 33" stroke="url(#favGold)" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <!-- Top tier -->
+  <rect x="22" y="14" width="20" height="12" rx="3" fill="none" stroke="url(#favGold)" stroke-width="2.5"/>
+  <!-- Cherry on top -->
+  <circle cx="32" cy="9" r="5" fill="url(#favGold)" opacity="0.9"/>
+  <path d="M32 4 Q 37 0, 40 3" stroke="url(#favGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
 </svg>

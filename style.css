@@ -323,11 +323,10 @@ ul {
 
 header {
     position: fixed;
-    top: 0;
+    top: 12px;
     left: 0;
     width: 100%;
-    height: 80px;
-    /* Standardized height (Point 17) */
+    height: 64px;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -338,8 +337,8 @@ header {
 
 @media (max-width: 768px) {
     header {
-        height: 64px;
-        /* Mobile height (Point 17) */
+        top: 8px;
+        height: 54px;
     }
 }
 
@@ -351,7 +350,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background: var(--background);
-    padding: 0 2.5rem;
+    padding: 0 2rem;
     height: 100%;
     /* Fill header height */
     border-radius: 20px;
@@ -386,7 +385,7 @@ header {
 }
 
 .oven-logo-svg {
-    height: 54px; /* Slightly larger for better detail */
+    height: 44px;
     width: auto;
     display: block;
 }
@@ -437,8 +436,7 @@ header {
 .nav-item::after {
     content: '';
     position: absolute;
-    bottom: 20px;
-    /* Aligned with standardized header */
+    bottom: 14px;
     left: 0;
     width: 0;
     height: 2px;
@@ -523,12 +521,12 @@ header {
 .login-btn {
     background: var(--primary);
     color: var(--white);
-    padding: 0 1.5rem;
-    height: 45px; /* Consistent height */
-    border-radius: 50px; /* Standardized radius */
+    padding: 0 1.3rem;
+    height: 38px;
+    border-radius: 50px;
     font-weight: 700;
     border: 2px solid var(--primary);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 1px;
     display: flex;
     align-items: center;
